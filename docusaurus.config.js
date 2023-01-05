@@ -7,8 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Foropay docs",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  url: "https://foropay.github.io",
+  baseUrl: "/docs-portal/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
