@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Foropay docs",
   url: "https://foropay.github.io",
-  baseUrl: "/",
+  baseUrl: "/docs-portal/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
