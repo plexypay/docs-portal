@@ -1,6 +1,11 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function Home(): JSX.Element {
-  return <Redirect to="/docs/getting_started/introduction" />;
+  const { siteConfig } = useDocusaurusContext();
+
+  return (
+    <Redirect to={`${siteConfig.baseUrl}docs/getting_started/introduction`} />
+  );
 }
