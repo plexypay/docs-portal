@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkforo_docs=self.webpackChunkforo_docs||[]).push([[237],{9754:(t,e,o)=>{o.r(e),o.d(e,{default:()=>c});var s=o(7294),n=o(6550),r=o(2263);function c(){const{siteConfig:t}=(0,r.Z)();return s.createElement(n.l_,{to:`${t.baseUrl}docs/getting_started/introduction`})}}}]);
