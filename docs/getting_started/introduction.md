@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Introduction
 
-## Translate doc
+## Translate document
 
 Copy the `docs/intro.md` file to the `i18n/fr` folder:
 
