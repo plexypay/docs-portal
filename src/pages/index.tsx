@@ -5,7 +5,5 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
-  return (
-    <Redirect to={`${siteConfig.baseUrl}docs/getting_started/introduction`} />
-  );
+  return <Redirect to={`${siteConfig.baseUrl}home`} />;
 }

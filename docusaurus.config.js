@@ -1,8 +1,8 @@
+const path = require("path");
+
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -32,19 +32,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          // lastVersion: "current",
-          // onlyIncludeVersions: ["current"],
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/foropay/docs-portal/blob/main/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/foropay/docs-portal/blob/main/",
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -53,6 +45,15 @@ const config = {
   ],
 
   plugins: [
+    // [
+    //   "docusaurus-plugin-module-alias",
+    //   {
+    //     alias: {
+    //       "@components": path.resolve(__dirname, "./src/components"),
+    //     },
+    //   },
+    // ],
+    "docusaurus-plugin-sass",
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -67,6 +68,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: true,
+      },
       navbar: {
         // title: "Foropay docs",
         logo: {
@@ -76,68 +81,25 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "getting_started/introduction",
+            docId: "home",
             position: "left",
             label: "Docs",
           },
           {
-            to: "/api-reference/webhooks",
-            label: "API reference",
-            position: "left",
-            activeBaseRegex: `/api-reference/`,
+            label: "Dashboard",
+            position: "right",
+            href: "https://dashboard.foropay.eu/",
           },
         ],
       },
 
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Product",
-            items: [],
-          },
-          {
-            title: "Developers",
-            items: [
-              {
-                label: "Docs",
-                href: "#",
-              },
-              {
-                label: "API reference",
-                href: "#",
-              },
-            ],
-          },
-          {
-            title: "Company",
-            items: [
-              {
-                label: "About us",
-                href: "#",
-              },
-              {
-                label: "Contact",
-                href: "#",
-              },
-
-              {
-                label: "Terms",
-                href: "#",
-              },
-
-              {
-                label: "Privacy",
-                href: "#",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Foropay.`,
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} ForoPay.`,
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
       },
     }),
 };
