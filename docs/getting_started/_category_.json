@@ -1,7 +1,8 @@
 {
-  "label": "Getting started",
-  "position": 1,
+  "label": "Get started",
+  "position": 2,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Before you start"
   }
 }
