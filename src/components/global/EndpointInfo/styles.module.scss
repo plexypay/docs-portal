@@ -1,0 +1,24 @@
+.endpointInfo {
+  position: relative;
+}
+.method {
+  position: absolute;
+  z-index: 1;
+  font-weight: 500;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: var(--ifm-link-color);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.2em;
+  vertical-align: middle;
+  height: 24px;
+  transform: translate(10px, 65%);
+  text-transform: uppercase;
+}
+
+.endpoint {
+  :global(.token-line) {
+    margin-left: 50px;
+  }
+}

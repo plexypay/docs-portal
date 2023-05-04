@@ -16,6 +16,6 @@ import DocsCards from '/src/components/global/DocsCards';
   </DocsCard>
 
    <DocsCard header="Plugins" href="/docs-portal/category/plugins">
-    <p>We offer a range of plugins for leading technology solutions to give your shoppers the best checkout experience. Our plugins are easy to integrate and come with Adyen payments platform functionality delivered out of the box.</p>
+    <p>We offer a range of plugins for leading technology solutions to give your shoppers the best checkout experience. Our plugins are easy to integrate and come with ForoPay payments platform functionality delivered out of the box.</p>
   </DocsCard>
 </DocsCards>
