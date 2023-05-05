@@ -33,6 +33,7 @@ const config = {
       ({
         docs: {
           routeBasePath: "/",
+          sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/foropay/docs-portal/blob/main/",
         },
@@ -92,7 +93,6 @@ const config = {
           },
         ],
       },
-
       footer: {
         style: "dark",
         links: [],
