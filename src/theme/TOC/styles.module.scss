@@ -1,0 +1,11 @@
+.tocHeader {
+  padding: 8px 0 4px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #00112c;
+  + :global(.theme-doc-toc-desktop > .table-of-contents) {
+    padding-top: 0;
+    padding-bottom: 1px;
+  }
+}
