@@ -20,10 +20,27 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 
 #### Request header parametres:
 
-| Name          |      Value       | Required |
-| :------------ | :--------------: | -------: |
-| Authorization |   private key    |      Yes |
-| Content-Type  | application/json |      Yes |
+<table>
+   <thead>
+      <tr>
+         <th align="left">Name</th>
+         <th align="center">Value</th>
+         <th align="center">Required</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td align="left">Authorization</td>
+         <td align="center">private key</td>
+         <td align="center"><icon icon="fa-check" color="green" /></td>
+      </tr>
+      <tr>
+         <td align="left">Content-Type</td>
+         <td align="center">application/json</td>
+         <td align="center"><icon icon="fa-check" color="green" /></td>
+      </tr>
+   </tbody>
+</table>
 
 #### Request and response schema descriptions:
 
@@ -137,9 +154,9 @@ values={[
 
 #### We support two options:
 
- - **Native**: The card issuer performs the authentication within your website or mobile app using passive, biometric, and two-factor authentication approaches. For more information, refer to 3D Secure 2 authentication flows.
+- **Native**: The card issuer performs the authentication within your website or mobile app using passive, biometric, and two-factor authentication approaches. For more information, refer to 3D Secure 2 authentication flows.
 
- - **Redirect**: Shoppers are redirected to the card issuer's site to provide additional authentication data, for example a password or an SMS verification code. The redirection might lead to lower conversion rates due to technical errors during the redirection, or shoppers dropping out of the authentication process.
+- **Redirect**: Shoppers are redirected to the card issuer's site to provide additional authentication data, for example a password or an SMS verification code. The redirection might lead to lower conversion rates due to technical errors during the redirection, or shoppers dropping out of the authentication process.
 
 ## Tokenization
 
@@ -151,12 +168,11 @@ We support over 30 card and local payment methods, including major card brands, 
 
 #### Benefits of tokenization
 
- - Let shoppers store their payment details for a faster checkout experience later.
- - Offer shoppers their stored payment details for later payments.
- - Save payment details for a subscription or a non-fixed schedule contract.
- - Submit later payments for subscriptions or for automatic top-ups to shopper accounts.
+- Let shoppers store their payment details for a faster checkout experience later.
+- Offer shoppers their stored payment details for later payments.
+- Save payment details for a subscription or a non-fixed schedule contract.
+- Submit later payments for subscriptions or for automatic top-ups to shopper accounts.
 
 To save your shopper's payment details, you only need to pass some additional parameters when making a payment. In the first payment, we collect the payment information from the shopper and generate a token for it. The token is then sent to your server for future use. For later payments, you need to make a request with the shopper reference and the token.
 
 If you want to use existing recurring contracts from another payment service provider, you can migrate and import recurring payment details to ForoPay.
-
