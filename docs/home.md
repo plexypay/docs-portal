@@ -11,11 +11,11 @@ import DocsCard from '/src/components/global/DocsCard';
 import DocsCards from '/src/components/global/DocsCards';
 
 <DocsCards>
-  <DocsCard header="Online Payments" href="/docs-portal/category/online-payments">
+  <DocsCard header="Accept payments" href="/docs-portal/category/accept-payments">
     <p>Accept payments with cards, wallets, and local payment methods on your website and mobile app.</p>
   </DocsCard>
 
-   <DocsCard header="Plugins" href="/docs-portal/category/plugins">
-    <p>We offer a range of plugins for leading technology solutions to give your shoppers the best checkout experience. Our plugins are easy to integrate and come with ForoPay payments platform functionality delivered out of the box.</p>
+   <DocsCard header="Manage payments" href="/docs-portal/category/manage-payments">
+    <p>Look up and refund, cancel, or capture payments. Look up detailed information about payments processed.</p>
   </DocsCard>
 </DocsCards>
