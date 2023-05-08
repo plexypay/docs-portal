@@ -3,6 +3,7 @@ sidebar_position: 6
 ---
 
 import EndpointsTab from '/src/components/global/EndpointsTab';
+import DocsTable from '/src/components/global/DocsTable';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -23,101 +24,546 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 <table>
    <thead>
       <tr>
-         <th align="left">Name</th>
-         <th align="center">Value</th>
-         <th align="center">Required</th>
+         <th>Name</th>
+         <th>Value</th>
+         <th>Required</th>
       </tr>
    </thead>
    <tbody>
       <tr>
-         <td align="left">Authorization</td>
-         <td align="center">private key</td>
-         <td align="center"><icon icon="fa-check" color="green" /></td>
+         <td>Authorization</td>
+         <td>private key</td>
+         <td className="text-center"><icon icon="fa-check" color="green" /></td>
       </tr>
       <tr>
-         <td align="left">Content-Type</td>
-         <td align="center">application/json</td>
-         <td align="center"><icon icon="fa-check" color="green" /></td>
+         <td>Content-Type</td>
+         <td>application/json</td>
+         <td className="text-center"><icon icon="fa-check" color="green" /></td>
       </tr>
    </tbody>
 </table>
 
-#### Request and response schema descriptions:
+#### Request
 
 <Tabs
-defaultValue="request"
-values={[
-{label: 'Request example', value: 'request'},
-{label: 'Request parameters', value: 'response'},
+  groupId="request"
+  defaultValue="example"
+  values={[
+  {label: 'Request example', value: 'example'},
+  {label: 'Request parameters', value: 'parameters'},
 ]}>
-<TabItem value="request">
+<TabItem value="example">
 
-| **Parameter name**                           | **Type** | **State**                              | **Description**                             | **Format/Allowed/Default values**                                                                                       |
-| :------------------------------------------- | -------- | -------------------------------------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| paymentMethod                                | string   | optional                               | transaction payment method                  | “card”                                                                                                                  |
-| cardData.encrypted                           | string   | required for the first request         | SHA-256 public key encrypted card data      |                                                                                                                         |
-| cardTokenId                                  | string   | require for the second and onwards txs | saved card data token id                    | uuid4                                                                                                                   |
-| terminalId                                   | string   | required                               | merchant terminal id                        | uuid4                                                                                                                   |
-| transactionType                              | string   | required                               | type of a transaction                       | auth \| sale \| verification                                                                                            |
-| orderDetails.description                     | string   | optional                               | description of order transaction            |                                                                                                                         |
-| orderDetails.orderReference                  | string   | optional                               | merchant internal order reference           |                                                                                                                         |
-| orderDetails.cartReference                   | string   | optional                               | merchant internal cart reference            |                                                                                                                         |
-| orderDetails.amount                          | float64  | required                               | transaction amount                          |                                                                                                                         |
-| orderDetails.currency                        | string   | required                               | transaction currency                        | EUR \| USD iso4217 standard                                                                                             |
-| orderDetails.items                           | list     | optional                               | transaction list of items                   |                                                                                                                         |
-| urls.cancel                                  | string   | required                               | fallback url for a cancelled transaction    | merchant page url                                                                                                       |
-| urls.success                                 | string   | required                               | fallback url for a successful transaction   | merchant page url                                                                                                       |
-| urls.failure                                 | string   | required                               | fallback url for a failed transaction       | merchant page url                                                                                                       |
-| urls.callback                                | string   | optional                               | callback url after a successful transaction | merchant page url                                                                                                       |
-| browserDetails.acceptHeader                  | string   | required                               |                                             | “text/html”                                                                                                             |
-| browserDetails.javaEnabled                   | boolean  | required                               |                                             | false                                                                                                                   |
-| browserDetails.language                      | string   | required                               |                                             | IETF BCP47 standard \| eu-US                                                                                            |
-| browserDeatils.colorDepth                    | string   | required                               |                                             | “24”                                                                                                                    |
-| browserDetails.screenHeight                  | string   | required                               |                                             | “1920”                                                                                                                  |
-| browserDetails.screenWidth                   | string   | required                               |                                             | “1080”                                                                                                                  |
-| browserDetails.timeZone                      | string   | required                               |                                             | “-360”                                                                                                                  |
-| browserDetails.userAgent                     | string   | required                               |                                             | “Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" |
-| customerDetails.email                        | string   | optional                               | transaction owner email                     |                                                                                                                         |
-| customerDetails.deliveryAddress.firstName    | string   | optional                               | transaction owner first name                |                                                                                                                         |
-| customerDetails.deliveryAddress.lastName     | string   | optional                               | transaction owner last name                 |                                                                                                                         |
-| customerDetails.deliveryAddress.addressLine1 | string   | optional                               | transaction owner address line 1            |                                                                                                                         |
-| customerDetails.deliveryAddress.addressLine2 | string   | optional                               | transaction owner address line 2            |                                                                                                                         |
-| customerDetails.deliveryAddress.postalCode   | string   | optional                               | transaction owner postal code               |                                                                                                                         |
-| customerDetails.deliveryAddress.phone        | string   | optional                               | transaction owner phone number              |                                                                                                                         |
-| customerDetails.deliveryAddress.country      | string   | optional                               | transaction owner country code              | required ISO 3166-2                                                                                                     |
-| customerDetails.billingAddress.firstName     | string   | required                               | billing address holder first name           |                                                                                                                         |
-| customerDetails.billingAddress.listName      | string   | required                               | billing address holder last name            |                                                                                                                         |
-| customerDetails.billingAddress.addressLine1  | string   | required                               | billing address holder address line 1       |                                                                                                                         |
-| customerDetails.billingAddress.addressLine2  | string   | required                               | billing address holder address line 2       |                                                                                                                         |
-| customerDetails.billingAddress.postalCode    | string   | required                               | billing address holder postal code          |                                                                                                                         |
-| customerDetails.billingAddress.phone         | string   | required                               | billing address holder phone                |                                                                                                                         |
-| customerDetails.billingAddress.country       | string   | required                               | billing address holder country code         | required ISO 3166-2                                                                                                     |
-| externalUserId                               | string   | optional                               | partner user id of flexible format          |                                                                                                                         |
+```json
+{
+  "browserDetails": {
+    "acceptHeader": "text/html",
+    "javaEnabled": false,
+    "language": "ru",
+    "colorDepth": "24",
+    "screenHeight": "2048",
+    "screenWidth": "1152",
+    "timeZone": "-360",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+  },
+  "customerDetails": {
+    "accountId": "ID123",
+    "email": "d.john@proton.me",
+    "deliveryAddress": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "postalCode": "P1234",
+      "city": "Berlin",
+      "phone": "+187312345",
+      "country": "DE"
+    },
+    "billingAddress": {
+      "firstName": "Doe",
+      "lastName": "Doe",
+      "addressLine1": "Address Line 1",
+      "addressLine2": "Address Line 2",
+      "postalCode": "P1234",
+      "city": "Berlin",
+      "phone": "+187312345",
+      "country": "DE"
+    }
+  },
+  "paymentSessionId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74",
+  "paymentMethod": "card",
+  "cardData": {
+    "encrypted": "PaG6rxSCfiOqO1HQvHu8aDDjkXoQqqP+fqLEd1YoiHJnZ40aeyaXhr/7ofP7SX1sTwXl2Tp65DBTq3zSp93MRilcXl7Af7BfI+izuUlUuo50IWvx5zTjbDWZ76XJDtb3WOGhv7vdtpzLskfd6GC+liqf9YoqndGhXcufVILBoKMjX544A4IND5rTx13dfN250g/jl0CmaWmufoDItokH8dXOG0jzwwdIqbdEz36kmfgwxiwEv2WXSgNOJc/tf3aJGdWCOZKart+PqNGjNT2V3h1vLVwAOUTJHWeG8+Vguoaryur1LA/tlNJLArdxSUlAty9g2EsRZiMsgf6Bu0sxhw=="
+  }
+}
+
+
+```
+
+</TabItem>
+<TabItem value="parameters">
+
+<DocsTable columns={[
+  {
+    wrappers: [{
+      tag: 'code',
+      attrs: {style:"max-width: 220px"}
+    }]
+  },
+  {
+    wrappers: [
+      {tag: 'b', attrs: {style:"color: var(--ifm-menu-color-active)"}}
+    ]
+  }
+]}>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter name</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Required</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Format/Allowed/<br/>Default values</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>paymentMethod</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction payment method</td>
+      <td>card</td>
+    </tr>
+    <tr>
+      <td>cardData.encrypted</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>SHA-256 public key encrypted card data</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardTokenId</td>
+      <td>string</td>
+      <td>require for the second and onwards txs</td>
+      <td>saved card data token id</td>
+      <td>uuid4</td>
+    </tr>
+    <tr>
+      <td>terminalId</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>merchant terminal id</td>
+      <td>uuid4</td>
+    </tr>
+    <tr>
+      <td>transactionType</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>type of a transaction</td>
+      <td>auth | sale | verification</td>
+    </tr>
+    <tr>
+      <td>orderDetails.description</td>
+      <td>string</td>
+      <td></td>
+      <td>description of order transaction</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>orderDetails.orderReference</td>
+      <td>string</td>
+      <td></td>
+      <td>merchant internal order reference</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>orderDetails.cartReference</td>
+      <td>string</td>
+      <td></td>
+      <td>merchant internal cart reference</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>orderDetails.amount</td>
+      <td>float64</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>transaction amount</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>orderDetails.currency</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>transaction currency</td>
+      <td>EUR | USD iso4217 standard</td>
+    </tr>
+    <tr>
+      <td>orderDetails.items</td>
+      <td>list</td>
+      <td></td>
+      <td>transaction list of items</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>urls.cancel</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>fallback url for a cancelled transaction</td>
+      <td>merchant page url</td>
+    </tr>
+    <tr>
+      <td>urls.success</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>fallback url for a successful transaction</td>
+      <td>merchant page url</td>
+    </tr>
+    <tr>
+      <td>urls.failure</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>fallback url for a failed transaction</td>
+      <td>merchant page url</td>
+    </tr>
+    <tr>
+      <td>urls.callback</td>
+      <td>string</td>
+      <td></td>
+      <td>callback url after a successful transaction</td>
+      <td>merchant page url</td>
+    </tr>
+    <tr>
+      <td>browserDetails.acceptHeader</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“text/html”</td>
+    </tr>
+    <tr>
+      <td>browserDetails.javaEnabled</td>
+      <td>boolean</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>browserDetails.language</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>IETF BCP47 standard | eu-US</td>
+    </tr>
+    <tr>
+      <td>browserDeatils.colorDepth</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“24”</td>
+    </tr>
+    <tr>
+      <td>browserDetails.screenHeight</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“1920”</td>
+    </tr>
+    <tr>
+      <td>browserDetails.screenWidth</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“1080”</td>
+    </tr>
+    <tr>
+      <td>browserDetails.timeZone</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“-360”</td>
+    </tr>
+    <tr>
+      <td>browserDetails.userAgent</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>“Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36&quot;</td>
+    </tr>
+    <tr>
+      <td>customerDetails.email</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner email</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.firstName</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner first name</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.lastName</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner last name</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.addressLine1</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner address line 1</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.addressLine2</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner address line 2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.postalCode</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner postal code</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.phone</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner phone number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.deliveryAddress.country</td>
+      <td>string</td>
+      <td></td>
+      <td>transaction owner country code</td>
+      <td>required ISO 3166-2</td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.firstName</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder first name</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.listName</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder last name</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.addressLine1</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder address line 1</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.addressLine2</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder address line 2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.postalCode</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder postal code</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.phone</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder phone</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>customerDetails.billingAddress.country</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>billing address holder country code</td>
+      <td>required ISO 3166-2</td>
+    </tr>
+    <tr>
+      <td>externalUserId</td>
+      <td>string</td>
+      <td></td>
+      <td>partner user id of flexible format</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</DocsTable>
+
+</TabItem>
+</Tabs>
+
+#### Response:
+
+<Tabs
+  groupId="response"
+  defaultValue="example"
+  values={[
+  {label: 'Response example', value: 'example'},
+  {label: 'Response parameters', value: 'parameters'},
+]}>
+<TabItem value="example">
+
+```json
+{
+  "id": "87b5eee0-5fb7-4ace-9fb9-175ce38b354b",
+  "orderReference": "1683542010846",
+  "amount": 126.27,
+  "currency": "EUR",
+  "paymentMethod": "card",
+  "success": true,
+  "message": "Success",
+  "threeDS": {
+    "html": "\u003c!doctype html\u003e\u003chtml lang='en'\u003e\u003chead\u003e\u003ctitle\u003eACS Authentication Page\u003c/title\u003e\u003cscript src='https://www.threedsecurempi.com/EMVTDS/jsp/CardHolder/PostForm.js'\u003e\u003c/script\u003e\u003cmeta charset='utf-8'\u003e\u003c/head\u003e\u003cbody\u003e\u003cform name='payer' id='payer' action='https\u0026#x3A;\u0026#x2F;\u0026#x2F;www.threedsecurempi.com\u0026#x2F;EMVTDS\u0026#x2F;AUT\u0026#x3F;Action\u0026#x3D;ProcessCReq' method='POST' style='display: none'\u003e\u003cinput type=\"hidden\" name=\"threeDSSessionData\" value=\"eyJ0cmFuc2FjdGlvbklkIjoiODdiNWVlZTAtNWZiNy00YWNlLTlmYjktMTc1Y2UzOGIzNTRiIn0\"/\u003e\u003cinput type='hidden' name='creq' value='eyJhY3NUcmFuc0lEIjoiZjU4ODQ4ZjAtZGEzZi00M2Q1LThmZWEtNjJlZWQ5YTlmZTgwIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJlNDEwYzU2OS03NGQxLTRjMzgtOWEyMi02YzA3OGM0MzZlN2MiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0'/\u003e\u003cscript type='application/javascript' \u003edocument.forms[0].submit()\u003c/script\u003e\u003c/form\u003e\u003c/body\u003e\u003c/html\u003e",
+    "creq": "eyJhY3NUcmFuc0lEIjoiZjU4ODQ4ZjAtZGEzZi00M2Q1LThmZWEtNjJlZWQ5YTlmZTgwIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJlNDEwYzU2OS03NGQxLTRjMzgtOWEyMi02YzA3OGM0MzZlN2MiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0",
+    "threeDSSessionData": "eyJ0cmFuc2FjdGlvbklkIjoiODdiNWVlZTAtNWZiNy00YWNlLTlmYjktMTc1Y2UzOGIzNTRiIn0",
+    "action": "https://www.threedsecurempi.com/EMVTDS/AUT?Action=ProcessCReq"
+  },
+  "status": "3ds-required",
+  "cardTokenId": "6a8185f0-c4bf-4157-92bd-061722c87658",
+  "cardMask": "******1111",
+  "cardExpiryDate": "12/27",
+  "cardholderName": "John Doe",
+  "cardScheme": "visa"
+}
+
+
+```
 
 </TabItem>
 
-<TabItem value="response">
+<TabItem value="parameters">
 
-| **Parameter name**         | **Type** | **Description**                                   | **Format/Allowed/Default values** |
-| :------------------------- | -------- | ------------------------------------------------- | --------------------------------- |
-| id                         | string   | newly created transaction id                      | uuid                              |
-| orderReference             | string   | merchant internal order reference                 |                                   |
-| amount                     | float64  | amount of a newly created transaction             |                                   |
-| currency                   | string   | currency of a newly created transaction           |                                   |
-| paymentMethod              | string   | payment method used to create the transaction     |                                   |
-| success                    | boolean  | flag to indicate the status for the request       |                                   |
-| message                    | string   | request response message                          |                                   |
-| threeDS.html               | string   | html generated window for entering 3ds password   |                                   |
-| threeDS.creq               | string   |                                                   |                                   |
-| threeDS.threeDSSessionData | string   |                                                   |                                   |
-| threeDS.action             | string   | endpoint to trigger 3ds check data validation     |                                   |
-| status                     | string   | indicates if 3ds is required at this current step |                                   |
-| cardTokenId                | string   | card token id of the stored card credentials      | uuid4                             |
-| cardMask                   | string   | masked card number                                | **\*\***1111                      |
-| cardExpiryDate             | string   | card expiration date                              | 01/24                             |
-| cardholderName             | string   | card owner first last name                        |                                   |
-| cardScheme                 | string   | card type                                         | visa \| mastercard                |
-| captured                   | boolean  | flag to indicate if the funds were blocked        |                                   |
+<DocsTable columns={[
+  {
+    wrappers: [{
+      tag: 'code',
+      attrs: {style:"max-width: 220px"}
+    }]
+  },
+  {
+    wrappers: [
+      {tag: 'b', attrs: {style:"color: var(--ifm-menu-color-active)"}}
+    ]
+  }
+]}>
+<table>
+   <thead>
+      <tr>
+         <th><strong>Parameter name</strong></th>
+         <th><strong>Type</strong></th>
+         <th><strong>Description</strong></th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>id</td>
+         <td>string</td>
+         <td>newly created transaction id</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>merchant internal order reference</td>
+      </tr>
+      <tr>
+         <td>amount</td>
+         <td>float64</td>
+         <td>amount of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>currency</td>
+         <td>string</td>
+         <td>currency of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>paymentMethod</td>
+         <td>string</td>
+         <td>payment method used to create the transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>boolean</td>
+         <td>flag to indicate the status for the request</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>request response message</td>
+      </tr>
+      <tr>
+         <td>threeDS.html</td>
+         <td>string</td>
+         <td>html generated window for entering 3ds password</td>
+      </tr>
+      <tr>
+         <td>threeDS.creq</td>
+         <td>string</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>threeDS.threeDSSessionData</td>
+         <td>string</td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>threeDS.action</td>
+         <td>string</td>
+         <td>endpoint to trigger 3ds check data validation</td>
+      </tr>
+      <tr>
+         <td>status</td>
+         <td>string</td>
+         <td>indicates if 3ds is required at this current step</td>
+      </tr>
+      <tr>
+         <td>cardTokenId</td>
+         <td>string</td>
+         <td>card token id of the stored card credentials</td>
+      </tr>
+      <tr>
+         <td>cardMask</td>
+         <td>string</td>
+         <td>masked card number</td>
+      </tr>
+      <tr>
+         <td>cardExpiryDate</td>
+         <td>string</td>
+         <td>card expiration date</td>
+      </tr>
+      <tr>
+         <td>cardholderName</td>
+         <td>string</td>
+         <td>card owner first last name</td>
+      </tr>
+      <tr>
+         <td>cardScheme</td>
+         <td>string</td>
+         <td>card type</td>
+      </tr>
+      <tr>
+         <td>captured</td>
+         <td>boolean</td>
+         <td>flag to indicate if the funds were blocked</td>
+      </tr>
+   </tbody>
+</table>
+</DocsTable>
 
 </TabItem>
 </Tabs>
@@ -130,12 +576,37 @@ values={[
 
 #### Response predefined constants:
 
-| **Field**  | **Value**      | **Description** |
-| :--------- | -------------- | --------------- |
-| status     | “3ds-skipped”  |                 |
-| status     | “3ds-required” |                 |
-| cardScheme | “visa”         |                 |
-| cardScheme | “mastercard”   |                 |
+<table>
+  <thead>
+    <tr>
+      <th><strong>Field</strong></th>
+      <th><strong>Value</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td>“3ds-skipped”</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>“3ds-required”</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardScheme</td>
+      <td>“visa”</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardScheme</td>
+      <td>“mastercard”</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 :::info
 
@@ -143,10 +614,27 @@ values={[
 
 :::
 
-| **Parameter name** | **Type** | **Description** |
-| :----------------- | -------- | --------------- |
-| message            | string   | error message   |
-| code               | int      | error code      |
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter name</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>error message</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>int</td>
+      <td>error code</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Handle 3D Secure
 
