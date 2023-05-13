@@ -6,9 +6,12 @@ hide_table_of_contents: true
 pagination_next: null
 # slug: /
 ---
+
 import DocsCard from '/src/components/global/DocsCard';
 import DocsCards from '/src/components/global/DocsCards';
+
 Integrating your payment solution with ForoPay is easy and flexible, with several options to suit your needs. Whether you prefer to use our hosted checkout page or build your own UI and process transactions using our APIs, we've got you covered.
+
 <DocsCards>
   <DocsCard header="Hosted page" href="/docs-portal/online_payments/accept_payments/hosted_checkout_page">
     <p>Use ForoPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
