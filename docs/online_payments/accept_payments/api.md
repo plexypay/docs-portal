@@ -17,7 +17,7 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 
 #### Endpoints
 
-<EndpointsTab method="post" url="/payments/" />
+<EndpointsTab method="post" url="/payments" />
 
 #### Request header parametres:
 
@@ -56,48 +56,56 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 
 ```json
 {
+  "transactionType": "sale",
+  "terminalId": "87b5eee0-5fb7-4ace-9fb9-175ce38b354b",
   "browserDetails": {
-    "acceptHeader": "text/html",
-    "javaEnabled": false,
-    "language": "ru",
-    "colorDepth": "24",
-    "screenHeight": "2048",
-    "screenWidth": "1152",
-    "timeZone": "-360",
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+      "acceptHeader": "text/html",
+      "javaEnabled": false,
+      "language": "en-US",
+      "colorDepth": "24",
+      "screenHeight": "1440",
+      "screenWidth": "900",
+      "timeZone": "-360",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+  },
+  "orderDetails": {
+      "description": "Demo Payment",
+      "orderReference": "1667207373325",
+      "cartReference": "32211122742521",
+      "amount": 126.27,
+      "currency": "EUR",
+      "items": []
   },
   "customerDetails": {
-    "accountId": "ID123",
-    "email": "d.john@proton.me",
-    "deliveryAddress": {
-      "firstName": "John",
-      "lastName": "Doe",
-      "addressLine1": "Address Line 1",
-      "addressLine2": "Address Line 2",
-      "postalCode": "P1234",
-      "city": "Berlin",
-      "phone": "+187312345",
-      "country": "DE"
-    },
-    "billingAddress": {
-      "firstName": "Doe",
-      "lastName": "Doe",
-      "addressLine1": "Address Line 1",
-      "addressLine2": "Address Line 2",
-      "postalCode": "P1234",
-      "city": "Berlin",
-      "phone": "+187312345",
-      "country": "DE"
-    }
+      "email": "johndoe@foropay.com",
+      "deliveryAddress": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "addressLine1": "Address Line 1 changed",
+          "addressLine2": "Address Line 2 changed",
+          "postalCode": "P1234",
+          "city": "Munich",
+          "phone": "+187312345",
+          "country": "DE"
+      },
+      "billingAddress": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "addressLine1": "Address Line 1 changed",
+          "addressLine2": "Address Line 2 changed",
+          "postalCode": "P123456",
+          "city": "Munich",
+          "phone": "+187312345",
+          "country": "DE"
+      }
   },
-  "paymentSessionId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74",
+  "threeDSNotificationUrl": "https://test-api.foropay.eu/v1/3ds/callback",
   "paymentMethod": "card",
   "cardData": {
-    "encrypted": "PaG6rxSCfiOqO1HQvHu8aDDjkXoQqqP+fqLEd1YoiHJnZ40aeyaXhr/7ofP7SX1sTwXl2Tp65DBTq3zSp93MRilcXl7Af7BfI+izuUlUuo50IWvx5zTjbDWZ76XJDtb3WOGhv7vdtpzLskfd6GC+liqf9YoqndGhXcufVILBoKMjX544A4IND5rTx13dfN250g/jl0CmaWmufoDItokH8dXOG0jzwwdIqbdEz36kmfgwxiwEv2WXSgNOJc/tf3aJGdWCOZKart+PqNGjNT2V3h1vLVwAOUTJHWeG8+Vguoaryur1LA/tlNJLArdxSUlAty9g2EsRZiMsgf6Bu0sxhw=="
-  }
+      "encrypted": "PaG6rxSCfiOqO1HQvHu8aDDjkXoQqqP+fqLEd1YoiHJnZ40aeyaXhr/7ofP7SX1sTwXl2Tp65DBTq3zSp93MRilcXl7Af7BfI+izuUlUuo50IWvx5zTjbDWZ76XJDtb3WOGhv7vdtpzLskfd6GC+liqf9YoqndGhXcufVILBoKMjX544A4IND5rTx13dfN250g/jl0CmaWmufoDItokH8dXOG0jzwwdIqbdEz36kmfgwxiwEv2WXSgNOJc/tf3aJGdWCOZKart+PqNGjNT2V3h1vLVwAOUTJHWeG8+Vguoaryur1LA/tlNJLArdxSUlAty9g2EsRZiMsgf6Bu0sxhw=="
+  },
+  "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74"
 }
-
-
 ```
 
 </TabItem>
@@ -107,7 +115,7 @@ Creates transaction with the data provided. Can require both 3ds authentication 
   {
     wrappers: [{
       tag: 'code',
-      attrs: {style:"max-width: 220px"}
+      attrs: {style:"max-width: 250px"}
     }]
   },
   {
@@ -129,25 +137,11 @@ Creates transaction with the data provided. Can require both 3ds authentication 
   </thead>
   <tbody>
     <tr>
-      <td>paymentMethod</td>
+      <td>transactionType</td>
       <td>string</td>
-      <td></td>
-      <td>transaction payment method</td>
-      <td>card</td>
-    </tr>
-    <tr>
-      <td>cardData.encrypted</td>
-      <td>string</td>
-      <td>required for the first request</td>
-      <td>SHA-256 public key encrypted card data</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cardTokenId</td>
-      <td>string</td>
-      <td>require for the second and onwards txs</td>
-      <td>saved card data token id</td>
-      <td>uuid4</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>type of a transaction</td>
+      <td>auth | sale | verification</td>
     </tr>
     <tr>
       <td>terminalId</td>
@@ -157,13 +151,62 @@ Creates transaction with the data provided. Can require both 3ds authentication 
       <td>uuid4</td>
     </tr>
     <tr>
-      <td>transactionType</td>
+      <td>browserDetails.acceptHeader</td>
       <td>string</td>
       <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td>type of a transaction</td>
-      <td>auth | sale | verification</td>
+      <td></td>
+      <td>text/html</td>
     </tr>
     <tr>
+      <td>browserDetails.javaEnabled</td>
+      <td>boolean</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>browserDetails.language</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>IETF BCP47 standard | eu-US</td>
+    </tr>
+    <tr>
+      <td>browserDeatils.colorDepth</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>browserDetails.screenHeight</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>1920</td>
+    </tr>
+    <tr>
+      <td>browserDetails.screenWidth</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>1080</td>
+    </tr>
+    <tr>
+      <td>browserDetails.timeZone</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>-360</td>
+    </tr>
+    <tr>
+      <td>browserDetails.userAgent</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td></td>
+      <td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36</td>
+    </tr>
+     <tr>
       <td>orderDetails.description</td>
       <td>string</td>
       <td></td>
@@ -204,90 +247,6 @@ Creates transaction with the data provided. Can require both 3ds authentication 
       <td></td>
       <td>transaction list of items</td>
       <td></td>
-    </tr>
-    <tr>
-      <td>urls.cancel</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td>fallback url for a cancelled transaction</td>
-      <td>merchant page url</td>
-    </tr>
-    <tr>
-      <td>urls.success</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td>fallback url for a successful transaction</td>
-      <td>merchant page url</td>
-    </tr>
-    <tr>
-      <td>urls.failure</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td>fallback url for a failed transaction</td>
-      <td>merchant page url</td>
-    </tr>
-    <tr>
-      <td>urls.callback</td>
-      <td>string</td>
-      <td></td>
-      <td>callback url after a successful transaction</td>
-      <td>merchant page url</td>
-    </tr>
-    <tr>
-      <td>browserDetails.acceptHeader</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“text/html”</td>
-    </tr>
-    <tr>
-      <td>browserDetails.javaEnabled</td>
-      <td>boolean</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>false</td>
-    </tr>
-    <tr>
-      <td>browserDetails.language</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>IETF BCP47 standard | eu-US</td>
-    </tr>
-    <tr>
-      <td>browserDeatils.colorDepth</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“24”</td>
-    </tr>
-    <tr>
-      <td>browserDetails.screenHeight</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“1920”</td>
-    </tr>
-    <tr>
-      <td>browserDetails.screenWidth</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“1080”</td>
-    </tr>
-    <tr>
-      <td>browserDetails.timeZone</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“-360”</td>
-    </tr>
-    <tr>
-      <td>browserDetails.userAgent</td>
-      <td>string</td>
-      <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
-      <td>“Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36&quot;</td>
     </tr>
     <tr>
       <td>customerDetails.email</td>
@@ -395,6 +354,34 @@ Creates transaction with the data provided. Can require both 3ds authentication 
       <td>required ISO 3166-2</td>
     </tr>
     <tr>
+      <td>threeDSNotificationUrl</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>3DS-2 redirect URL to be triggered by the ASC server</td>
+      <td>https://test-api.foropay.eu/v1/3ds/callback</td>
+    </tr>
+    <tr>
+      <td>paymentMethod</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>transaction payment method</td>
+      <td>card</td>
+    </tr>
+    <tr>
+      <td>cardData.encrypted</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>SHA-256 public key encrypted card data</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardTokenId</td>
+      <td>string</td>
+      <td>require for the second and onwards txs</td>
+      <td>saved card data token id</td>
+      <td>uuid4</td>
+    </tr>
+    <tr>
       <td>externalUserId</td>
       <td>string</td>
       <td></td>
@@ -421,28 +408,34 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 
 ```json
 {
-  "id": "87b5eee0-5fb7-4ace-9fb9-175ce38b354b",
-  "orderReference": "1683542010846",
+  "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
+  "orderReference": "1667207373325",
   "amount": 126.27,
   "currency": "EUR",
   "paymentMethod": "card",
   "success": true,
+  "captured": true,
   "message": "Success",
   "threeDS": {
-    "html": "\u003c!doctype html\u003e\u003chtml lang='en'\u003e\u003chead\u003e\u003ctitle\u003eACS Authentication Page\u003c/title\u003e\u003cscript src='https://www.threedsecurempi.com/EMVTDS/jsp/CardHolder/PostForm.js'\u003e\u003c/script\u003e\u003cmeta charset='utf-8'\u003e\u003c/head\u003e\u003cbody\u003e\u003cform name='payer' id='payer' action='https\u0026#x3A;\u0026#x2F;\u0026#x2F;www.threedsecurempi.com\u0026#x2F;EMVTDS\u0026#x2F;AUT\u0026#x3F;Action\u0026#x3D;ProcessCReq' method='POST' style='display: none'\u003e\u003cinput type=\"hidden\" name=\"threeDSSessionData\" value=\"eyJ0cmFuc2FjdGlvbklkIjoiODdiNWVlZTAtNWZiNy00YWNlLTlmYjktMTc1Y2UzOGIzNTRiIn0\"/\u003e\u003cinput type='hidden' name='creq' value='eyJhY3NUcmFuc0lEIjoiZjU4ODQ4ZjAtZGEzZi00M2Q1LThmZWEtNjJlZWQ5YTlmZTgwIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJlNDEwYzU2OS03NGQxLTRjMzgtOWEyMi02YzA3OGM0MzZlN2MiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0'/\u003e\u003cscript type='application/javascript' \u003edocument.forms[0].submit()\u003c/script\u003e\u003c/form\u003e\u003c/body\u003e\u003c/html\u003e",
-    "creq": "eyJhY3NUcmFuc0lEIjoiZjU4ODQ4ZjAtZGEzZi00M2Q1LThmZWEtNjJlZWQ5YTlmZTgwIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJlNDEwYzU2OS03NGQxLTRjMzgtOWEyMi02YzA3OGM0MzZlN2MiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0",
-    "threeDSSessionData": "eyJ0cmFuc2FjdGlvbklkIjoiODdiNWVlZTAtNWZiNy00YWNlLTlmYjktMTc1Y2UzOGIzNTRiIn0",
-    "action": "https://www.threedsecurempi.com/EMVTDS/AUT?Action=ProcessCReq"
+      "status": "successful",
+      "electronicCommerceIndicator": "05",
+      "acsTranscationId": "11e3879f-327b-4c77-8c14-1f53aaa15adc",
+      "mpiTransactionId": "d1a756e2-4f6a-4ea8-bf83-9caccf260379",
+      "directoryTransactionId": "e13c83ee-065c-4c58-abc3-ef859f4b6a52",
+      "type": "frictionless"
   },
-  "status": "3ds-required",
-  "cardTokenId": "6a8185f0-c4bf-4157-92bd-061722c87658",
-  "cardMask": "******1111",
-  "cardExpiryDate": "12/27",
+  "status": "3ds-skipped",
+  "cardTokenId": "7bafca06-9031-44bf-9289-c66e35ddbd91",
+  "cardMask": "******0000",
+  "cardExpiryDate": "11/27",
   "cardholderName": "John Doe",
-  "cardScheme": "visa"
+  "cardScheme": "visa",
+  "cvvStatus": "P",
+  "cvvStatusDecoded": "not processed",
+  "networkTransactionReference": "574258",
+  "responseCode": "00",
+  "authCode": "374952"
 }
-
-
 ```
 
 </TabItem>
@@ -453,7 +446,7 @@ Creates transaction with the data provided. Can require both 3ds authentication 
   {
     wrappers: [{
       tag: 'code',
-      attrs: {style:"max-width: 220px"}
+      attrs: {style:"max-width: 290px"}
     }]
   },
   {
@@ -502,6 +495,11 @@ Creates transaction with the data provided. Can require both 3ds authentication 
          <td>flag to indicate the status for the request</td>
       </tr>
       <tr>
+         <td>captured</td>
+         <td>boolean</td>
+         <td>flag to indicate if the funds were blocked</td>
+      </tr>
+      <tr>
          <td>message</td>
          <td>string</td>
          <td>request response message</td>
@@ -509,27 +507,42 @@ Creates transaction with the data provided. Can require both 3ds authentication 
       <tr>
          <td>threeDS.html</td>
          <td>string</td>
-         <td>html generated window for entering 3ds password</td>
+         <td>html generated pop-up window for entering 3ds password</td>
       </tr>
       <tr>
-         <td>threeDS.creq</td>
+         <td>threeDS.status</td>
          <td>string</td>
-         <td></td>
+         <td>3DS-2 process status</td>
       </tr>
       <tr>
-         <td>threeDS.threeDSSessionData</td>
+         <td>threeDS.electronicCommerceIndicator</td>
          <td>string</td>
-         <td></td>
+         <td>generated electronic commerce indicator</td>
       </tr>
       <tr>
-         <td>threeDS.action</td>
+         <td>threeDS.acsTranscationId</td>
          <td>string</td>
-         <td>endpoint to trigger 3ds check data validation</td>
+         <td>acs transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.mpiTransactionId</td>
+         <td>string</td>
+         <td>mpi transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.directoryTransactionId</td>
+         <td>string</td>
+         <td>directory transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.type</td>
+         <td>string</td>
+         <td>3DS-2 type</td>
       </tr>
       <tr>
          <td>status</td>
          <td>string</td>
-         <td>indicates if 3ds is required at this current step</td>
+         <td>indicates if 3ds-2 is required at this current step</td>
       </tr>
       <tr>
          <td>cardTokenId</td>
@@ -557,9 +570,29 @@ Creates transaction with the data provided. Can require both 3ds authentication 
          <td>card type</td>
       </tr>
       <tr>
-         <td>captured</td>
-         <td>boolean</td>
-         <td>flag to indicate if the funds were blocked</td>
+         <td>cvvStatus</td>
+         <td>string</td>
+         <td>raw cvv status</td>
+      </tr>
+      <tr>
+         <td>cvvStatusDecoded</td>
+         <td>string</td>
+         <td>decoded cvv status</td>
+      </tr>
+      <tr>
+         <td>networkTransactionReference</td>
+         <td>string</td>
+         <td>network transaction reference</td>
+      </tr>
+      <tr>
+         <td>responseCode</td>
+         <td>string</td>
+         <td>generated response code</td>
+      </tr>
+      <tr>
+         <td>authCode</td>
+         <td>string</td>
+         <td>generated auth code</td>
       </tr>
    </tbody>
 </table>
@@ -570,7 +603,7 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 
 :::info
 
-**On success:** no response, status code `200`
+**On success:** status code `200`
 
 :::
 
@@ -604,6 +637,16 @@ Creates transaction with the data provided. Can require both 3ds authentication 
       <td>cardScheme</td>
       <td>“mastercard”</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>threeDS.type</td>
+      <td>"frictionless"</td>
+      <td>3DS-2 authentication type</td>
+    </tr>
+    <tr>
+      <td>threeDS.type</td>
+      <td>"challengeflow"</td>
+      <td>3DS-2 authentication type</td>
     </tr>
   </tbody>
 </table>
@@ -645,6 +688,330 @@ Creates transaction with the data provided. Can require both 3ds authentication 
 - **Native**: The card issuer performs the authentication within your website or mobile app using passive, biometric, and two-factor authentication approaches. For more information, refer to 3D Secure 2 authentication flows.
 
 - **Redirect**: Shoppers are redirected to the card issuer's site to provide additional authentication data, for example a password or an SMS verification code. The redirection might lead to lower conversion rates due to technical errors during the redirection, or shoppers dropping out of the authentication process.
+
+#### Endpoints
+
+<EndpointsTab method="post" url="/3ds/callback" />
+
+#### Request
+
+<Tabs
+  groupId="request"
+  defaultValue="example"
+  values={[
+  {label: 'Request example', value: 'example'},
+  {label: 'Request parameters', value: 'parameters'},
+]}>
+<TabItem value="example">
+
+```json
+{
+    "cres": "eyJtZXNzYWdlVHlwZSI6IkNSZXMiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJlODczOWIzMC0yNGNiLTQ2YjgtYTE5Mi04Y2U4OWM4NTc1NDYiLCJhY3NUcmFuc0lEIjoiNmFmMTBiNGEtMDdhOS00YWY1LWE2OTMtZDIyZGMzYjZjYTQ5IiwiYWNzVWlUeXBlIjoiMDEiLCJjaGFsbGVuZ2VDb21wbGV0aW9uSW5kIjoiWSIsInRyYW5zU3RhdHVzIjoiWSJ9",
+    "transactionId": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e"
+}
+```
+
+
+</TabItem>
+<TabItem value="parameters">
+
+<DocsTable columns={[
+  {
+    wrappers: [{
+      tag: 'code',
+      attrs: {style:"max-width: 250px"}
+    }]
+  },
+  {
+    wrappers: [
+      {tag: 'b', attrs: {style:"color: var(--ifm-menu-color-active)"}}
+    ]
+  }
+]}>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter name</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Required</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Format/Allowed/<br/>Default values</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cres</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>generated cres data from ASC server</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>transactionId</td>
+      <td>string</td>
+      <td className="text-center"><icon icon="fa-check" color="green" /></td>
+      <td>transaction id from transaction initiation step</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</DocsTable>
+
+</TabItem>
+</Tabs>
+
+#### Response
+
+<Tabs
+  groupId="response"
+  defaultValue="example"
+  values={[
+  {label: 'Response example', value: 'example'},
+  {label: 'Response parameters', value: 'parameters'},
+]}>
+<TabItem value="example">
+
+```json
+{
+    "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
+    "orderReference": "1667207373325",
+    "amount": 126.27,
+    "currency": "EUR",
+    "paymentMethod": "card",
+    "success": true,
+    "captured": true,
+    "message": "Success",
+    "threeDS": {
+        "status": "successful",
+        "electronicCommerceIndicator": "05",
+        "acsTranscationId": "6af10b4a-07a9-4af5-a693-d22dc3b6ca49",
+        "mpiTransactionId": "e8739b30-24cb-46b8-a192-8ce89c857546",
+        "directoryTransactionId": "1ffb9e12-a16e-4943-85fb-6a71b39418b2"
+    },
+    "cardTokenId": "f2eda7e8-83c4-441b-b7ec-18b1cbb6b56d",
+    "cardMask": "******1111",
+    "cardExpiryDate": "11/27",
+    "cardholderName": "JOHN M",
+    "cardScheme": "visa",
+    "cvvStatus": "P",
+    "cvvStatusDecoded": "not processed",
+    "networkTransactionReference": "574258",
+    "responseCode": "00",
+    "authCode": "747208"
+}
+```
+
+</TabItem>
+
+<TabItem value="parameters">
+
+<DocsTable columns={[
+  {
+    wrappers: [{
+      tag: 'code',
+      attrs: {style:"max-width: 290px"}
+    }]
+  },
+  {
+    wrappers: [
+      {tag: 'b', attrs: {style:"color: var(--ifm-menu-color-active)"}}
+    ]
+  }
+]}>
+<table>
+   <thead>
+      <tr>
+         <th><strong>Parameter name</strong></th>
+         <th><strong>Type</strong></th>
+         <th><strong>Description</strong></th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>id</td>
+         <td>string</td>
+         <td>newly created transaction id</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>merchant internal order reference</td>
+      </tr>
+      <tr>
+         <td>amount</td>
+         <td>float64</td>
+         <td>amount of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>currency</td>
+         <td>string</td>
+         <td>currency of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>paymentMethod</td>
+         <td>string</td>
+         <td>payment method used to create the transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>boolean</td>
+         <td>flag to indicate the status for the request</td>
+      </tr>
+      <tr>
+         <td>captured</td>
+         <td>boolean</td>
+         <td>flag to indicate if the funds were blocked</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>request response message</td>
+      </tr>
+      <tr>
+         <td>threeDS.status</td>
+         <td>string</td>
+         <td>3DS-2 process status</td>
+      </tr>
+      <tr>
+         <td>threeDS.electronicCommerceIndicator</td>
+         <td>string</td>
+         <td>generated electronic commerce indicator</td>
+      </tr>
+      <tr>
+         <td>threeDS.acsTranscationId</td>
+         <td>string</td>
+         <td>acs transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.mpiTransactionId</td>
+         <td>string</td>
+         <td>mpi transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.directoryTransactionId</td>
+         <td>string</td>
+         <td>directory transaction id</td>
+      </tr>
+      <tr>
+         <td>status</td>
+         <td>string</td>
+         <td>indicates if 3ds-2 is required at this current step</td>
+      </tr>
+      <tr>
+         <td>cardTokenId</td>
+         <td>string</td>
+         <td>card token id of the stored card credentials</td>
+      </tr>
+      <tr>
+         <td>cardMask</td>
+         <td>string</td>
+         <td>masked card number</td>
+      </tr>
+      <tr>
+         <td>cardExpiryDate</td>
+         <td>string</td>
+         <td>card expiration date</td>
+      </tr>
+      <tr>
+         <td>cardholderName</td>
+         <td>string</td>
+         <td>card owner first last name</td>
+      </tr>
+      <tr>
+         <td>cardScheme</td>
+         <td>string</td>
+         <td>card type</td>
+      </tr>
+      <tr>
+         <td>cvvStatus</td>
+         <td>string</td>
+         <td>raw cvv status</td>
+      </tr>
+      <tr>
+         <td>cvvStatusDecoded</td>
+         <td>string</td>
+         <td>decoded cvv status</td>
+      </tr>
+      <tr>
+         <td>networkTransactionReference</td>
+         <td>string</td>
+         <td>network transaction reference</td>
+      </tr>
+      <tr>
+         <td>responseCode</td>
+         <td>string</td>
+         <td>generated response code</td>
+      </tr>
+      <tr>
+         <td>authCode</td>
+         <td>string</td>
+         <td>generated auth code</td>
+      </tr>
+   </tbody>
+</table>
+</DocsTable>
+
+</TabItem>
+</Tabs>
+
+:::info
+
+**On success:** status code `200`
+
+:::
+
+#### Response predefined constants:
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Field</strong></th>
+      <th><strong>Value</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cardScheme</td>
+      <td>“visa”</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardScheme</td>
+      <td>“mastercard”</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+:::info
+
+**On error:** status code != `200`
+
+:::
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter name</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>error message</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>int</td>
+      <td>error code</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Tokenization
 
