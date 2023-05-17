@@ -125,9 +125,7 @@ Only transactions with status "charged" can be refunded.
 {
     "id": "56b5f4ac-c95e-4b89-bd2d-3cf7369857ef",
     "responseCode": "00",
-    "cvvStatus": "P",
-    "cvvStatusDecoded": "not processed",
-    "networkTransactionReference": "574258",
+    "networkTransactionReference": "0000021266523063630A",
     "authCode": "856156"
 }
 ```
@@ -167,16 +165,6 @@ Only transactions with status "charged" can be refunded.
          <td>responseCode</td>
          <td>string</td>
          <td>response code generated</td>
-      </tr>
-      <tr>
-         <td>cvvStatus</td>
-         <td>string</td>
-         <td>cvv status code generated</td>
-      </tr>
-      <tr>
-         <td>cvvStatusDecoded</td>
-         <td>string</td>
-         <td>cvv status decoded</td>
       </tr>
       <tr>
          <td>networkTransactionReference</td>

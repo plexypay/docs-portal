@@ -56,10 +56,6 @@ No request body is require as this endpoint does not expect any parameters.
 ```json
 {
     "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
-    "responseCode": "00",
-    "cvvStatus": "P",
-    "cvvStatusDecoded": "not processed",
-    "networkTransactionReference": "574258",
     "authCode": "856156"
 }
 ```
@@ -94,26 +90,6 @@ No request body is require as this endpoint does not expect any parameters.
          <td>id</td>
          <td>string</td>
          <td>cancelled transaction id</td>
-      </tr>
-      <tr>
-         <td>responseCode</td>
-         <td>string</td>
-         <td>response code generated</td>
-      </tr>
-      <tr>
-         <td>cvvStatus</td>
-         <td>string</td>
-         <td>cvv status code generated</td>
-      </tr>
-      <tr>
-         <td>cvvStatusDecoded</td>
-         <td>string</td>
-         <td>cvv status decoded</td>
-      </tr>
-      <tr>
-         <td>networkTransactionReference</td>
-         <td>string</td>
-         <td>network transaction reference generated</td>
       </tr>
       <tr>
          <td>authCode</td>
