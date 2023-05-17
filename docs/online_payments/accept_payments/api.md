@@ -102,7 +102,12 @@ This section provides information on how to initiate a payment transaction. The 
   "threeDSNotificationUrl": "https://test-api.foropay.eu/v1/3ds/callback",
   "paymentMethod": "card",
   "cardData": {
-      "encrypted": "PaG6rxSCfiOqO1HQvHu8aDDjkXoQqqP+fqLEd1YoiHJnZ40aeyaXhr/7ofP7SX1sTwXl2Tp65DBTq3zSp93MRilcXl7Af7BfI+izuUlUuo50IWvx5zTjbDWZ76XJDtb3WOGhv7vdtpzLskfd6GC+liqf9YoqndGhXcufVILBoKMjX544A4IND5rTx13dfN250g/jl0CmaWmufoDItokH8dXOG0jzwwdIqbdEz36kmfgwxiwEv2WXSgNOJc/tf3aJGdWCOZKart+PqNGjNT2V3h1vLVwAOUTJHWeG8+Vguoaryur1LA/tlNJLArdxSUlAty9g2EsRZiMsgf6Bu0sxhw=="
+     "encryptedCardNumber": "base64RSAEncrypted or empty string",
+     "encryptedExpiryMonth": "base64RSAEncrypted or empty string",
+     "encryptedExpiryYear": "base64RSAEncrypted or empty string",
+     "encryptedCvv": "base64RSAEncrypted or empty string",
+     "encryptedCardholderName": "base64RSAEncrypted or empty string",
+     "tokenId": "a5399a91-d03e-40d0-bd74-f039a03def19"
   },
   "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74"
 }
@@ -368,14 +373,42 @@ This section provides information on how to initiate a payment transaction. The 
       <td>card</td>
     </tr>
     <tr>
-      <td>cardData.encrypted</td>
+      <td>cardData.encryptedCardNumber</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>SHA-256 public key encrypted card data</td>
+      <td>encrypted by RSA public key value of card number</td>
       <td></td>
     </tr>
     <tr>
-      <td>cardTokenId</td>
+      <td>cardData.encryptedExpiryMonth</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>encrypted by RSA public key value of card expiry month</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardData.encryptedExpiryYear</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>encrypted by RSA public key value of card expiry year</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cardData.encryptedCvv</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>encrypted by RSA public key value of card CVV</td>
+      <td></td>
+    </tr>     
+    <tr>
+      <td>cardData.encryptedCardholderName</td>
+      <td>string</td>
+      <td>required for the first request</td>
+      <td>encrypted by RSA public key value of cardholder name</td>
+      <td></td>
+    </tr>       
+    <tr>
+      <td>cardData.tokendId</td>
       <td>string</td>
       <td>require for the second and onwards txs</td>
       <td>saved card data token id</td>
