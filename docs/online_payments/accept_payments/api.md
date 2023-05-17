@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 ## Initiate a transaction
 
-Base payment request.
+Generic payment request.
 
-Creates transaction with the data provided. Can require both 3ds authentication or skip it.
+This section provides information on how to initiate a payment transaction. The transaction can require 3DS authentication.
 
 #### Endpoints
 
@@ -679,15 +679,17 @@ Creates transaction with the data provided. Can require both 3ds authentication 
   </tbody>
 </table>
 
-## Handle 3D Secure
+## Managing 3D Secure
 
-3D Secure 2 is an authentication protocol that provides an additional layer of verification for card-not-present (CNP) transactions. We recommend that you use it to comply with authentication regulations for online payments such as PSD2 SCA, and to use liability shift rules.
+To enhance the security of card-not-present (CNP) transactions, it is recommended to implement the 3D Secure 2 authentication protocol. This protocol adds an extra layer of verification and ensures compliance with authentication regulations, such as PSD2 SCA, while also enabling liability shift rules.
 
-#### We support two options:
+#### We offer two options to handle 3D Secure authentication:
 
-- **Native**: The card issuer performs the authentication within your website or mobile app using passive, biometric, and two-factor authentication approaches. For more information, refer to 3D Secure 2 authentication flows.
+- **Native**: With this option, the authentication process takes place within your website or mobile app. The card issuer utilizes passive, biometric, and two-factor authentication methods to verify the transaction. To learn more about the various 3D Secure 2 authentication flows, please refer to our documentation.
 
-- **Redirect**: Shoppers are redirected to the card issuer's site to provide additional authentication data, for example a password or an SMS verification code. The redirection might lead to lower conversion rates due to technical errors during the redirection, or shoppers dropping out of the authentication process.
+- **Redirect**: In this option, customers are redirected to the card issuer's website to provide additional authentication data, such as a password or an SMS verification code. It's worth noting that the redirect approach may lead to lower conversion rates due to potential technical errors during the redirection process, or customers abandoning the authentication procedure.
+
+By implementing 3D Secure 2, you can bolster the security of your online payments and ensure compliance with regulatory requirements.
 
 #### Endpoints
 
@@ -1013,21 +1015,22 @@ Creates transaction with the data provided. Can require both 3ds authentication 
   </tbody>
 </table>
 
-## Tokenization
+## Tokenisation
 
-With ForoPay, you can securely store one or more payment details per shopper. This allows you to offer subscription payments, automatic top-ups to shopper accounts, and give your shoppers a faster checkout experience by using their stored card.
+ForoPay provides a secure solution for storing payment details, empowering you to offer enhanced payment options to your shoppers. Through our tokenisation feature, you can securely save one or more payment details per shopper, facilitating subscription payments, automatic top-ups, and a quicker checkout process using their stored cards.
 
-We refer to these saved payment details as tokens and storing a shopper's payment details as tokenization.
+Tokenisation involves storing shoppers' payment details as tokens within our system. These tokens represent the saved payment information, ensuring the security of sensitive data. Our platform supports various payment methods, including over 30 card brands, ACH, and SEPA direct debit. Please refer to our Payment Methods documentation for detailed information about the supported payment methods.
 
-We support over 30 card and local payment methods, including major card brands, ACH, and SEPA direct debit. See Payment methods for more information.
+#### Key Benefits of Tokenisation
 
-#### Benefits of tokenization
+Tokenisation offers several advantages for both you and your shoppers:
 
-- Let shoppers store their payment details for a faster checkout experience later.
-- Offer shoppers their stored payment details for later payments.
-- Save payment details for a subscription or a non-fixed schedule contract.
-- Submit later payments for subscriptions or for automatic top-ups to shopper accounts.
+- Faster Checkout Experience: Shoppers can conveniently store their payment details for future use, enabling swift and hassle-free checkout experiences.
+- Convenient Payment Retrieval: Shoppers have easy access to their stored payment details, simplifying subsequent payments.
+- Flexible Payment Management: Save payment details for subscriptions or non-fixed schedule contracts, providing more flexibility in payment options.
+- Seamless Subsequent Payments: Initiate later payments effortlessly for subscriptions or automatic top-ups to shoppers' accounts.
 
-To save your shopper's payment details, you only need to pass some additional parameters when making a payment. In the first payment, we collect the payment information from the shopper and generate a token for it. The token is then sent to your server for future use. For later payments, you need to make a request with the shopper reference and the token.
+To save your shopper's payment details, you only need to include additional parameters during the payment process. During the first payment, we collect the necessary payment information and generate a token. This token is securely transmitted to your server for future use. For subsequent payments, simply make a request with the shopper reference and the corresponding token.
 
-If you want to use existing recurring contracts from another payment service provider, you can migrate and import recurring payment details to ForoPay.
+Additionally, if you currently have recurring contracts with another payment service provider, you have the option to migrate and import your existing recurring payment details to ForoPay, simplifying the transition process.
+
