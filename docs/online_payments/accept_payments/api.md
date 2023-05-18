@@ -102,13 +102,13 @@ This section provides information on how to initiate a payment transaction. The 
   "threeDSNotificationUrl": "https://test-api.foropay.eu/v1/3ds/callback",
   "paymentMethod": "card",
   "cardData": {
-     "encryptedCardNumber": "base64RSAEncrypted or empty string",
-     "encryptedExpiryMonth": "base64RSAEncrypted or empty string",
-     "encryptedExpiryYear": "base64RSAEncrypted or empty string",
-     "encryptedCvv": "base64RSAEncrypted or empty string",
-     "encryptedCardholderName": "base64RSAEncrypted or empty string",
+     "encryptedCardNumber": "hJjwmfFp3c/50xIKyPtsK9NI/Z8DFfxQyeDMpI4PohR8Bzpl7eEQgqjfcC1JIvRep98Hu9b4G9VvgpFNf3PmlVQygidNGqOyKOCESiQnh57ofOYKiEuYIr/LwY3TRcfvC+WE9AmvW9l/2VcLVm5SPZ6MoEKU0njpti6VWnKqrNzp5fmHwkWKKmuc1V+YjLgWAiAbYgnPNG6wG4BuaQk6p/IFIVH+Ur40z1XF0/zezybsXSJfLF2F0PKri2cO6V89cTQYb4Usiu9W+pckVyeeMYOKPykU05NPyhd3VmDrAf8gvdUq2K4CON2l+99u6XoQ9tDlBgysoll7vy0BjSMkGw==",
+     "encryptedExpiryMonth": "l0K5uY9qv+QeaXdiBdL9tNLTv8wiEvDxy2dWaehdwQJw70KaHrPqPMc6kIxXtRtE1J74zLci3A7xJDNO3UrdggpEkaO6iOlkUa7I+GdxbVTx1uR9bwJfHa9T8F/vN67mir4eKB/9lTHHKkLxD0+cH4dnlHBbyFXrxUhWPWlSZ+Vj3W3GXPm+bb0rCUHhVkHwSK4qcGs9q23fRZYzfo3G2P6NZYw2+hWJiP5s9oBFuZtNElresBqkvbFP+SmxbPy4mRaE6sXAT1SuYOC7J9NJhEa+VU2yQkocdG/PEt9KpXVKq0JwNozI5bgpxfxxt3smaGvThgoyzkyBUdkPCXJS2w==",
+     "encryptedExpiryYear": "KgER1av3pMHiGohuPsuPKCzZz0wM6EszkLYFHEpI/lqEvLp4X6IaBSh350sXianXCslpNBeTegyth9vcyet+HPPsXiwKoF1q5b4SmDVYAXqhIKELUku8j18UlYleZfr0YtucXM1/DWzdVraDOhMrUJBigkK4UEW0BMiqZvQZRHKW44slRumJyXq7NYOMmsqqhuwxImXlD/V33Pjofs24ZPNdOTorU30+Rqz7WoVW7/CsO3glEjICT6iaJu3X+AeAdWhI9oWiWGVcgYdKgIN7mltWKNSMhtnCAHRHs7MJIQPzpte5nkXh6e6dPQ6j5DzZd75tkzaexbzcxqIAJnq58Q==",
+     "encryptedCvv": "JTfCaV/2/eT6FfyjcW0uJC1lp+iCJ99eZTCCfZHtGv7yK+bDp++7u1WDeYKvZMnfO0OkwZ+pibhdVDsiOEKfpsIjbTfFk1oGm2A2zQcJSvOe8G/g6+BoYGy1FOUymni/v457+CUEfeh1Z83IChWEAsFvWl90VXOKj8gS7YRV8pfuDzA0tIAPeCi932RuEMarq4M+zyZbZfmAksV/Y3vlk1VGRoL3ljXu0MMvGaC+50kgb6pXkwo/j/zxbvJOXN0e+riIZvl7MMJUD6PNGC8bb/NnKfGACtlOQixP5yCnK9GeylIOWbXnZ3h85sSEeaga8DxAsvgV7vp/wVGJg+czXw==",
+     "encryptedCardholderName": "VmI55RoiVB0cSnSU+wpuSrwDBFLEbpXQWMnsKRwT81vsfXa6WiczG4GbXjc4oIbJawcCJ8XfmRqW2NKyCoraPUJ87qm+gUl7mCfU+8qgnqWwi0DHdS21SXU0ROz2TSIrS+Z8FES0bVAcn34C71QiWmVTuidSSnrSTr3YNaE7fV9niHfVLEXjSbkF0kE4t8F2xLxB4E1KagNIvwlpD4BjY4qUJfigFlJI/ECTne/kz73r1E+Ij0LgGg8FvlJZ/JgEHdRgoKYklBZn0gOVFU7Vj8uhMfO2MfXe+10hOid1hTQkU/U2X6coMU/ttFjYuA2odP3M7Try4hhtKsKURsyETg==",
      "tokenId": "a5399a91-d03e-40d0-bd74-f039a03def19"
-  },
+},
   "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74"
 }
 ```
@@ -376,35 +376,35 @@ This section provides information on how to initiate a payment transaction. The 
       <td>cardData.encryptedCardNumber</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>encrypted by RSA public key value of card number</td>
+      <td>Base64 encoded of encrypted by RSA public key value of card number</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedExpiryMonth</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>encrypted by RSA public key value of card expiry month</td>
+      <td>Base64 encoded of encrypted by RSA public key value of card expiry month</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedExpiryYear</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>encrypted by RSA public key value of card expiry year</td>
+      <td>Base64 encoded of encrypted by RSA public key value of card expiry year</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedCvv</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>encrypted by RSA public key value of card CVV</td>
+      <td>Base64 encoded of encrypted by RSA public key value of card CVV</td>
       <td></td>
     </tr>     
     <tr>
       <td>cardData.encryptedCardholderName</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>encrypted by RSA public key value of cardholder name</td>
+      <td>Base64 encoded of encrypted by RSA public key value of cardholder name</td>
       <td></td>
     </tr>       
     <tr>
