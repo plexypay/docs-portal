@@ -108,8 +108,9 @@ This section provides information on how to initiate a payment transaction. The 
      "encryptedCvv": "JTfCaV/2/eT6FfyjcW0uJC1lp+iCJ99eZTCCfZHtGv7yK+bDp++7u1WDeYKvZMnfO0OkwZ+pibhdVDsiOEKfpsIjbTfFk1oGm2A2zQcJSvOe8G/g6+BoYGy1FOUymni/v457+CUEfeh1Z83IChWEAsFvWl90VXOKj8gS7YRV8pfuDzA0tIAPeCi932RuEMarq4M+zyZbZfmAksV/Y3vlk1VGRoL3ljXu0MMvGaC+50kgb6pXkwo/j/zxbvJOXN0e+riIZvl7MMJUD6PNGC8bb/NnKfGACtlOQixP5yCnK9GeylIOWbXnZ3h85sSEeaga8DxAsvgV7vp/wVGJg+czXw==",
      "encryptedCardholderName": "VmI55RoiVB0cSnSU+wpuSrwDBFLEbpXQWMnsKRwT81vsfXa6WiczG4GbXjc4oIbJawcCJ8XfmRqW2NKyCoraPUJ87qm+gUl7mCfU+8qgnqWwi0DHdS21SXU0ROz2TSIrS+Z8FES0bVAcn34C71QiWmVTuidSSnrSTr3YNaE7fV9niHfVLEXjSbkF0kE4t8F2xLxB4E1KagNIvwlpD4BjY4qUJfigFlJI/ECTne/kz73r1E+Ij0LgGg8FvlJZ/JgEHdRgoKYklBZn0gOVFU7Vj8uhMfO2MfXe+10hOid1hTQkU/U2X6coMU/ttFjYuA2odP3M7Try4hhtKsKURsyETg==",
      "tokenId": "a5399a91-d03e-40d0-bd74-f039a03def19"
-},
-  "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74"
+  },
+  "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74",
+  "skipThreeDS": false
 }
 ```
 
@@ -419,6 +420,13 @@ This section provides information on how to initiate a payment transaction. The 
       <td>string</td>
       <td></td>
       <td>partner user id of flexible format</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>skipThreeDS</td>
+      <td>boolean</td>
+      <td></td>
+      <td>flag which allows to skip 3DS on given request</td>
       <td></td>
     </tr>
   </tbody>
