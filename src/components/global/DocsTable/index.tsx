@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 type ColumnWrapper = {
   tag: string,
-  attrs: Record<string, string>
+  attrs: Record<string, string | Function>
 }
 
 type DocsTableColumnDesc = {
@@ -38,11 +38,13 @@ function DocsTable({ columns = [], children }: Props): JSX.Element {
 function wrapColumns (columns: DocsTableColumnDesc[], tableEl: HTMLTableElement) {
   columns.forEach((col, index) => {
     const tdsList = tableEl.querySelectorAll(`tbody tr td:nth-child(${index + 1})`)
-    
+    if(!col.wrappers) {
+      return
+    }
     tdsList.forEach((td) => {
       [...col.wrappers].reverse().forEach(wrp => {
         const elOrTextNode = td.children.length ? td.children[0] : td.innerHTML
-        const wrapperEl = genWrapper(wrp)
+        const wrapperEl = genWrapper(wrp, elOrTextNode)
         const wrapped = wrapEl(elOrTextNode, wrapperEl)
         if(typeof elOrTextNode === 'string') {
           td.replaceChildren(wrapped)
@@ -55,12 +57,17 @@ function wrapColumns (columns: DocsTableColumnDesc[], tableEl: HTMLTableElement)
 /**
  * Generate wrappee element by wrapper configs
  * @param wrapper 
- * @returns 
+ * @returns {HTMLElement}
  */
-function genWrapper (wrapper: ColumnWrapper) {
+function genWrapper (wrapper: ColumnWrapper, content: Element | string) {
   const wrp = document.createElement(wrapper.tag)
   Object.entries(wrapper.attrs || {}).forEach(([name, val]) => {
-    wrp.setAttribute(name, val)
+    if(typeof val === 'function') {
+      wrp.setAttribute(name, val(content))
+    } else {
+      wrp.setAttribute(name, val)
+    }
+    
   })
   return wrp
 }

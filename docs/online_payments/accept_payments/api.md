@@ -4,6 +4,7 @@ sidebar_position: 6
 
 import EndpointsTab from '/src/components/global/EndpointsTab';
 import DocsTable from '/src/components/global/DocsTable';
+import ExpandableTable from '/src/components/global/ExpandableTable';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -797,6 +798,7 @@ This section provides information on how to initiate a payment transaction. The 
 
 #### Response codes:
 
+<ExpandableTable>
 <table>
   <thead>
     <tr>
@@ -1003,6 +1005,7 @@ This section provides information on how to initiate a payment transaction. The 
     </tr>
   </tbody>
 </table>
+</ExpandableTable>
 
 :::info
 
