@@ -110,7 +110,12 @@ This section provides information on how to initiate a payment transaction. The 
      "tokenId": "a5399a91-d03e-40d0-bd74-f039a03def19"
   },
   "externalUserId": "a68d2c6b-0d01-43d0-8813-6a453fc46c74",
-  "skipThreeDS": false
+  "skipThreeDS": false,
+  "moto": false,
+  "recurring": {
+   "parentTransactionId": "45072f5d-0090-4efd-89c9-4f933a9b1e10",
+   "recurringType": "ucof"
+  }
 }
 ```
 
@@ -429,6 +434,27 @@ This section provides information on how to initiate a payment transaction. The 
       <td>flag which allows to skip 3DS on given request</td>
       <td></td>
     </tr>
+    <tr>
+      <td>moto</td>
+      <td>boolean</td>
+      <td></td>
+      <td>flag which marks request as MOTO</td>
+      <td></td>
+    </tr>     
+    <tr>
+      <td>recurring.parentTransactionId</td>
+      <td>string</td>
+      <td>required when recurring.recurringType is ucof</td>
+      <td>id of parent recurring transaction</td>
+      <td>uuid4</td>
+    </tr>      
+    <tr>
+      <td>recurring.recurringType</td>
+      <td>string</td>
+      <td>required if recurring node filled</td>
+      <td>recurring type</td>
+      <td>available values: cof_initial, ucof</td>
+    </tr>           
   </tbody>
 </table>
 </DocsTable>
