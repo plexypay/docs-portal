@@ -116,7 +116,8 @@ This section provides information on how to initiate a payment transaction. The 
   "recurring": {
    "parentTransactionId": "45072f5d-0090-4efd-89c9-4f933a9b1e10",
    "recurringType": "ucof"
-  }
+  },
+  "scaExemption": null
 }
 ```
 
@@ -455,7 +456,14 @@ This section provides information on how to initiate a payment transaction. The 
       <td>required if recurring node filled</td>
       <td>recurring type</td>
       <td>available values: cof_initial, ucof</td>
-    </tr>           
+    </tr>       
+    <tr>
+      <td>scaExemption</td>
+      <td>string</td>
+      <td>optional</td>
+      <td>sca exemption type</td>
+      <td>available values: low_value</td>
+    </tr>         
   </tbody>
 </table>
 </DocsTable>
@@ -1390,3 +1398,49 @@ To save your shopper's payment details, you only need to include additional para
 
 Additionally, if you currently have recurring contracts with another payment service provider, you have the option to migrate and import your existing recurring payment details to ForoPay, simplifying the transition process.
 
+## MOTO
+You can add moto(nullable boolean) property to the request payload. By setting up it to true you mark you transaction as MOTO transaction, available values [true, false, null], null and false means the same.
+
+## SCA Exemption
+You can add scaExemption(nullable string) property to the request payload to mark your transaction “Sca Exemptioned”. Available values: [ “low_value“, null ]. Null values means that transaction is not marked as 'SCA exemption'
+
+## Mixing up MOTO and Sca Exemption in one transaction
+MOTO priority is higher than priority of Sca Exemption, when moto is `true` and sca_exemption is not null, then sca_exemption will be ignored for current transaction/request.
+
+## Recurring payments
+Currently supported 2 types of recurring payments: 
+<table>
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Purpose</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cof_initial</td>
+      <td>Card-On-File Initial</td>
+      <td>Need for creating initial recurring transaction</td>
+    </tr>
+    <tr>
+      <td>ucof</td>
+      <td>Unscheduled Card-On_file</td>
+      <td>Need for creating subsequent recurring payments by parent cof_initial transaction</td>
+    </tr>
+  </tbody>
+</table>
+
+You can set recurring settings in property of request payload called `recurring`
+
+Currency and Amount can differ from initial transaction in case `ucof` recurring type.
+
+For merchant initiated unscheduled-card-on-file recurring payment(MIT) you need to call `{baseURl}/v1/payments/recurring/merchant/initiated` url instead of url described in start of the page and fill `recurring` property to mark a transaction as `ucof`
+Example of unsheduled-card-on-file `recurring` property
+```
+"recurring": {
+  "recurringType": "ucof",
+  "parentTransactionId": "ada3fa56-0ddd-435f-9fbe-8494fbdffb9d" // parent cof_initial transaction
+}
+```
+ 
