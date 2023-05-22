@@ -384,35 +384,35 @@ This section provides information on how to initiate a payment transaction. The 
       <td>cardData.encryptedCardNumber</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>Base64 encoded of encrypted by RSA public key value of card number</td>
+      <td>Base64 encoded of encrypted by card data RSA public key value of card number</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedExpiryMonth</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>Base64 encoded of encrypted by RSA public key value of card expiry month</td>
+      <td>Base64 encoded of encrypted by card data RSA public key value of card expiry month</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedExpiryYear</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>Base64 encoded of encrypted by RSA public key value of card expiry year</td>
+      <td>Base64 encoded of encrypted by card data RSA public key value of card expiry year</td>
       <td></td>
     </tr>
     <tr>
       <td>cardData.encryptedCvv</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>Base64 encoded of encrypted by RSA public key value of card CVV</td>
+      <td>Base64 encoded of encrypted by card data RSA public key value of card CVV</td>
       <td></td>
     </tr>     
     <tr>
       <td>cardData.encryptedCardholderName</td>
       <td>string</td>
       <td>required for the first request</td>
-      <td>Base64 encoded of encrypted by RSA public key value of cardholder name</td>
+      <td>Base64 encoded of encrypted by card data RSA public key value of cardholder name</td>
       <td></td>
     </tr>       
     <tr>
@@ -470,6 +470,9 @@ This section provides information on how to initiate a payment transaction. The 
 
 </TabItem>
 </Tabs>
+
+#### Card data encryption:
+You can get RSA public key for encryption int [step 2 in Getting Started](https://foropay.github.io/docs-portal/getting_started/#step-2-get-your-api-key)
 
 #### Response:
 
