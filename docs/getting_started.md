@@ -25,8 +25,9 @@ With your test Customer Area account, you can:
 - Apply for a live account
 - Start building your integration.
 
-## Step 2: Get your API key
-
+## Step 2: Get your API and SHA-256 card public encryption key
+To acquire the private API key and SHA-256 public encryption key, please email us on support@foropay.eu.
+You can later use the received keys to send requests to our API and encrypt card data with SHA-256 encryption method.
 
 
 ## Step 3. Build your integration
@@ -162,10 +163,6 @@ To test your integration, you can simulate payments using our test credit card n
         <td>5168159443230322</td>
         <td>CRes Error</td>
       </tr>
-      <tr>
-        <td>4111111111111111</td>
-        <td>Challenge Text</td>
-      </tr>
 	  <tr>
         <td>5283901906612672</td>
         <td>Frictionless Fail(R)</td>
@@ -184,6 +181,11 @@ To test your integration, you can simulate payments using our test credit card n
 #### Testing scenarios
 
 <DocsTable columns={[
+	  {
+    wrappers: [{
+      tag: 'code',
+    }]
+  },
   {
     wrappers: [{
       tag: 'code',
@@ -208,105 +210,122 @@ To test your integration, you can simulate payments using our test credit card n
 ]}>
 <table>
   <thead>
-    <tr>
-      <th>Card</th>
-      <th>Scenario</th>
-      <th>Amount</th>
-      <th>Expected Result</th>
-    </tr>
+      <tr>
+		<th>#</th>
+		<th>Card</th>
+		<th>Scenario</th>
+		<th>Amount</th>
+		<th>Expected Result</th>
+		</tr>
   </thead>
 	<tbody>
 		<tr>
+			<td>1</td>
 			<td>4111111111111111</td>
 			<td>3DS v2 Challenge Flow (challenge is 555) - Fully authenticated and authorized</td>
 			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>2</td>
 			<td>4111111111111111</td>
 			<td>3DS v2 Challenge Flow (challenge is 111) - Card authentication failed</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>3</td>
 			<td>4200000000000000</td>
 			<td>3DS v2 Frictionless Flow - Frictionlessly authenticated and authorized</td>
 			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>4</td>
 			<td>5283901906612672</td>
 			<td>3DS v2 Frictionless Flow - Rejected</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>5</td>
 			<td>5283901901266672</td>
 			<td>Cardholder not enrolled in 3DS v2 service</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>6</td>
 			<td>5440382741349178</td>
 			<td>3DS v2 Challenge Flow - CRes not received</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>7</td>
 			<td>5168159443230322</td>
 			<td>3DS v2 Challenge Flow - CRes Error</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>8</td>
 			<td>4111111111111111</td>
 			<td>3DS v2 Challenge Flow (challenge is 555) - Response Code 05</td>
 			<td>20050</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>9</td>
 			<td>4111111111111111 / CSC (CVV2): 444</td>
 			<td>3DS v2 Challenge Flow (challenge is 555) - CVV check failed</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>10</td>
 			<td>4111111111111111</td>
 			<td>MOTO transaction - telephone order</td>
 			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>11</td>
 			<td>4200000000000000</td>
 			<td>MOTO transaction - mail order</td>
 			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>12</td>
 			<td>4111111111111111</td>
 			<td>SCA exemption - Low value</td>
 			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>13</td>
 			<td>4200000000000000</td>
 			<td>Card Verification</td>
 			<td>0</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>14</td>
 			<td>4111111111111111</td>
 			<td>Card Verification + Recurring Initial</td>
 			<td>0</td>
 			<td>Success</td>
 		</tr>
 		<tr>
+			<td>15</td>
 			<td>4111111111111110</td>
 			<td>Wrong card number (Luhn algorithm check failed)</td>
 			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
+			<td>16</td>
 			<td>4200000000000000</td>
 			<td>Response Code 51 (Insufficient funds)</td>
 			<td>20510</td>

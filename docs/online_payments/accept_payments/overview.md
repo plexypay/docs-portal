@@ -27,7 +27,7 @@ ForoPay offers several solutions for accepting payments.
     <p>Retain the look and feel of your own website completely, without needing to handle raw card data.</p>
   </DocsCard>
 
-  <DocsCard header="API only" >
+  <DocsCard header="API only"  href="/docs-portal/online_payments/accept_payments/api">
     <p>Build your own payment form and process transactions using ForoPay’s APIs.</p>
   </DocsCard>
 </DocsCards>
