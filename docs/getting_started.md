@@ -25,7 +25,7 @@ With your test Customer Area account, you can:
 - Apply for a live account
 - Start building your integration.
 
-## Step 2: Get your API and SHA-256 card public encryption key
+## Step 2: Get your private API and SHA-256 public card encryption key
 To acquire the private API key and SHA-256 public encryption key, please email us on support@foropay.eu.
 You can later use the received keys to send requests to our API and encrypt card data with SHA-256 encryption method.
 
