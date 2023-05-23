@@ -36,20 +36,20 @@ Start building your integration using your test account. You can also proceed wi
 Choose the integration option that best suits your business needs:
 
 <DocsCards>
-  <DocsCard header="Hosted page" href="/docs-portal/online_payments/accept_payments/hosted_checkout_page">
+  <DocsCard header="Hosted page" >
     <p>Use ForoPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
   </DocsCard>
 
-  <DocsCard header="Popup" href="/docs-portal/online_payments/accept_payments/popup">
+  <DocsCard header="Popup" >
     <p>Allow visitors to securely shop on your webshop without leaving your site.
     </p>
   </DocsCard>
 
-  <DocsCard header="Drop-in" href="/docs-portal/online_payments/accept_payments/drop_in">
+  <DocsCard header="Drop-in" >
     <p>List all payment methods in one block with the drop-in integration.</p>
   </DocsCard>
 
-  <DocsCard header="Hosted fields" href="/docs-portal/online_payments/accept_payments/hosted_fields">
+  <DocsCard header="Hosted fields" >
     <p>Maintain your website's branding while ensuring card data security with hosted fields.</p>
   </DocsCard>
 
@@ -208,168 +208,84 @@ To test your integration, you can simulate payments using our test credit card n
 ]}>
 <table>
   <thead>
-      <tr>
-			<th>Card</th>
-			<th>Scenario</th>
-			<th>Amount</th>
-			<th>Expected Result</th>
-		</tr>
+    <tr>
+      <th>Card</th>
+      <th>Scenario</th>
+      <th>Amount</th>
+      <th>Expected Result</th>
+    </tr>
   </thead>
 	<tbody>
 		<tr>
 			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 555) - Successfully authorised</td>
-			<td>16.49</td>
+			<td>3DS v2 Challenge Flow (challenge is 555) - Fully authenticated and authorized</td>
+			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
 			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 111) - Authentication failed</td>
-			<td>11.45</td>
+			<td>3DS v2 Challenge Flow (challenge is 111) - Card authentication failed</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>4200000000000000</td>
-			<td>3DS Frictionless Flow - Authorised - Sale transaction</td>
-			<td>45</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4200000000000000</td>
-			<td>3DS Frictionless Flow - Authorised - Auth transaction</td>
-			<td>15</td>
+			<td>3DS v2 Frictionless Flow - Frictionlessly authenticated and authorized</td>
+			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
 			<td>5283901906612672</td>
-			<td>3DS Frictionless Flow - Rejected</td>
-			<td>83.99</td>
+			<td>3DS v2 Frictionless Flow - Rejected</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>5283901901266672</td>
-			<td>Cardholder not enrolled in 3DS service</td>
-			<td>10</td>
+			<td>Cardholder not enrolled in 3DS v2 service</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>5440382741349178</td>
-			<td>3DS Challenge Flow - CRes not received</td>
-			<td>16.34</td>
+			<td>3DS v2 Challenge Flow - CRes not received</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>5168159443230322</td>
-			<td>3DS Challenge Flow - CRes Error</td>
-			<td>11.5</td>
+			<td>3DS v2 Challenge Flow - CRes Error</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 555) - Response Code 05</td>
+			<td>3DS v2 Challenge Flow (challenge is 555) - Response Code 05</td>
 			<td>20050</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>4111111111111111 / CSC (CVV2): 444</td>
-			<td>3DS Challenge Flow (challenge is 555) - CVV check failed</td>
-			<td>39</td>
+			<td>3DS v2 Challenge Flow (challenge is 555) - CVV check failed</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
 			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 555)</td>
-			<td>43.33</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Full refund of the transaction from Scenario #11</td>
-			<td>43.33</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4200000000000000</td>
-			<td>3DS Frictionless Flow - Authorised - Sale transaction</td>
-			<td>56.41</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Partial refund of the transaction from Scenario #13</td>
-			<td>21.29</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4200000000000000</td>
-			<td>3DS Frictionless Flow - Authorisation only</td>
-			<td>12</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Reversal (cancel) of the transaction from Scenario #15</td>
-			<td>&nbsp;</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 555) - Authorisation only</td>
-			<td>15</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Partial charge (partial capture) of the transaction from Scenario #17</td>
-			<td>10.32</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4111111111111111</td>
-			<td>3DS Challenge Flow (challenge is 555) - Authorisation only</td>
-			<td>0.01</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Full charge (capture) of the transaction from Scenario #19</td>
-			<td>0.01</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4111111111111111</td>
 			<td>MOTO transaction - telephone order</td>
-			<td>155.55</td>
+			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
 			<td>4200000000000000</td>
 			<td>MOTO transaction - mail order</td>
-			<td>18.76</td>
+			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
 			<td>4111111111111111</td>
 			<td>SCA exemption - Low value</td>
-			<td>11</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>4200000000000000</td>
-			<td>Recurring Initial (UCOF)</td>
-			<td>5</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>MIT (initial from the case 24) - Sale transaction</td>
-			<td>15</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>MIT (initial from the case 24) - Auth transaction</td>
-			<td>10</td>
+			<td>Any</td>
 			<td>Success</td>
 		</tr>
 		<tr>
@@ -385,45 +301,9 @@ To test your integration, you can simulate payments using our test credit card n
 			<td>Success</td>
 		</tr>
 		<tr>
-			<td>-</td>
-			<td>MIT (initial from the case 28) - Auth transaction</td>
-			<td>12</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Token payment (CIT) - Auth transaction (token from the case 23)</td>
-			<td>150.01</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Token payment (CIT) - Sale transaction (token from the case 15)</td>
-			<td>430.43</td>
-			<td>Success</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Token payment (CIT) - Sale transaction - Invalid token</td>
-			<td>19.99</td>
-			<td>Rejected</td>
-		</tr>
-		<tr>
-			<td>4111111111111112</td>
+			<td>4111111111111110</td>
 			<td>Wrong card number (Luhn algorithm check failed)</td>
-			<td>1</td>
-			<td>Rejected</td>
-		</tr>
-		<tr>
-			<td>4111111111111111</td>
-			<td>Expired card</td>
-			<td>2</td>
-			<td>Rejected</td>
-		</tr>
-		<tr>
-			<td>4111111111111111</td>
-			<td>Expiry date not valid (Allowed max current date +10 years, for test case provide +10 years and 1 month)</td>
-			<td>3</td>
+			<td>Any</td>
 			<td>Rejected</td>
 		</tr>
 		<tr>
@@ -431,12 +311,6 @@ To test your integration, you can simulate payments using our test credit card n
 			<td>Response Code 51 (Insufficient funds)</td>
 			<td>20510</td>
 			<td>Rejected</td>
-		</tr>
-		<tr>
-			<td>-</td>
-			<td>Partial refund of the transaction from Scenario #13</td>
-			<td>3.29</td>
-			<td>Success</td>
 		</tr>
 	</tbody>
 </table>
