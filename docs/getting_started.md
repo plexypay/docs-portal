@@ -181,10 +181,7 @@ To test your integration, you can simulate payments using our test credit card n
 #### Testing scenarios
 
 <DocsTable columns={[
-	  {
-    wrappers: [{
-      tag: 'code',
-    }]
+  {
   },
   {
     wrappers: [{

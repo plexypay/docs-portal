@@ -1386,7 +1386,7 @@ By implementing 3D Secure 2, you can bolster the security of your online payment
 
 ForoPay provides a secure solution for storing payment details, empowering you to offer enhanced payment options to your shoppers. Through our tokenisation feature, you can securely save one or more payment details per shopper, facilitating subscription payments, automatic top-ups, and a quicker checkout process using their stored cards.
 
-Tokenisation involves storing shoppers' payment details as tokens within our system. These tokens represent the saved payment information, ensuring the security of sensitive data. Our platform supports various payment methods, including over 30 card brands, ACH, and SEPA direct debit. Please refer to our Payment Methods documentation for detailed information about the supported payment methods.
+Tokenisation involves storing shoppers' payment details as tokens within our system. These tokens represent the saved payment information, ensuring the security of sensitive data.
 
 #### Key Benefits of Tokenisation
 
@@ -1399,13 +1399,11 @@ Tokenisation offers several advantages for both you and your shoppers:
 
 To save your shopper's payment details, you only need to include additional parameters during the payment process. During the first payment, we collect the necessary payment information and generate a token. This token is securely transmitted to your server for future use. For subsequent payments, simply make a request with the shopper reference and the corresponding token.
 
-Additionally, if you currently have recurring contracts with another payment service provider, you have the option to migrate and import your existing recurring payment details to ForoPay, simplifying the transition process.
-
 ## MOTO
-You can add moto(nullable boolean) property to the request payload. By setting up it to true you mark you transaction as MOTO transaction, available values [true, false, null], null and false means the same.
+You can add moto(nullable boolean) property to the request payload. By setting up it to true you mark you transaction as MOTO transaction, available values `[true, false, null]`, `null` and `false` means the same.
 
 ## SCA Exemption
-You can add scaExemption(nullable string) property to the request payload to mark your transaction “Sca Exemptioned”. Available values: [ “low_value“, null ]. Null values means that transaction is not marked as 'SCA exemption'
+You can add scaExemption(nullable string) property to the request payload to mark your transaction “Sca Exemptioned”. Available values: `[ “low_value“, null ]`. Null values means that transaction is not marked as 'SCA exemption'
 
 ## Mixing up MOTO and Sca Exemption in one transaction
 MOTO priority is higher than priority of Sca Exemption, when moto is `true` and sca_exemption is not null, then sca_exemption will be ignored for current transaction/request.
