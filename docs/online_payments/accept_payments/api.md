@@ -776,22 +776,22 @@ You can get RSA public key for encryption int [step 2 in Getting Started](https:
   <tbody>
     <tr>
       <td>status</td>
-      <td>“3ds-skipped”</td>
+      <td>'3ds-skipped'</td>
       <td></td>
     </tr>
     <tr>
       <td>status</td>
-      <td>“3ds-required”</td>
+      <td>'3ds-required'</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>“visa”</td>
+      <td>'visa'</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>“mastercard”</td>
+      <td>'mastercard'</td>
       <td></td>
     </tr>
     <tr>
@@ -1343,12 +1343,12 @@ By implementing 3D Secure 2, you can bolster the security of your online payment
   <tbody>
     <tr>
       <td>cardScheme</td>
-      <td>“visa”</td>
+      <td>'visa'</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>“mastercard”</td>
+      <td>'mastercard'</td>
       <td></td>
     </tr>
   </tbody>
@@ -1403,10 +1403,10 @@ To save your shopper's payment details, you only need to include additional para
 You can add moto(nullable boolean) property to the request payload. By setting up it to true you mark you transaction as MOTO transaction, available values `[true, false, null]`, `null` and `false` means the same.
 
 ## SCA Exemption
-You can add scaExemption(nullable string) property to the request payload to mark your transaction “Sca Exemptioned”. Available values: `[ “low_value“, null ]`. Null values means that transaction is not marked as 'SCA exemption'
+You can add scaExemption(nullable string) property to the request payload to mark your transaction “Sca Exemptioned”. Available values: `[ 'low_value', null ]`. Null values means that transaction is not marked as 'SCA exemption'
 
 ## Mixing up MOTO and Sca Exemption in one transaction
-MOTO priority is higher than priority of Sca Exemption, when moto is `true` and sca_exemption is not null, then sca_exemption will be ignored for current transaction/request.
+MOTO priority is higher than priority of Sca Exemption, when moto is `true` and sca_exemption is not `null`, then sca_exemption will be ignored for current transaction/request.
 
 ## Recurring payments
 Currently supported 2 types of recurring payments: 
