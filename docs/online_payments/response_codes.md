@@ -966,6 +966,266 @@ This page provides error and response codes our API returns
       <td>8036</td>
       <td>Request is not allowed - Current account does not have any active account merchant links</td>
     </tr>
+    <tr>
+      <td>3001</td>
+      <td>Authorization header is missing</td>
+    </tr>
+    <tr>
+      <td>3002</td>
+      <td>Private key required for authentication</td>
+    </tr>
+    <tr>
+      <td>3003</td>
+      <td>Private key required for authentication</td>
+    </tr>
+    <tr>
+      <td>3004</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3005</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3006</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3007</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3008</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3009</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3010</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3011</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3012</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3013</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3014</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3015</td>
+      <td>Connection problem with statement service</td>
+    </tr>
+    <tr>
+      <td>3016</td>
+      <td>Missing Bearer token in Authorization header</td>
+    </tr>
+    <tr>
+      <td>3017</td>
+      <td>Connection problem with statement service</td>
+    </tr>
+    <tr>
+      <td>3018</td>
+      <td>Connection problem with statement service</td>
+    </tr>
+    <tr>
+      <td>3019</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3020</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3021</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3022</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3023</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3024</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3025</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3026</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3027</td>
+      <td>Connection problem with statement service</td>
+    </tr>
+    <tr>
+      <td>3028</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3029</td>
+      <td>Connection problem with statement service</td>
+    </tr>
+    <tr>
+      <td>3030</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3031</td>
+      <td>Failed to process bearer token</td>
+    </tr>
+    <tr>
+      <td>3033</td>
+      <td>userID property not found in context locals</td>
+    </tr>
+    <tr>
+      <td>3034</td>
+      <td>Failed to context userID property of context locals</td>
+    </tr>
+    <tr>
+      <td>3035</td>
+      <td>userID property of context locals mustn't be an empty string</td>
+    </tr>
+    <tr>
+      <td>3036</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3037</td>
+      <td>Connection problem with dossier service</td>
+    </tr>
+    <tr>
+      <td>3038</td>
+      <td>Missing or malformed api key</td>
+    </tr>
+    <tr>
+      <td>3039</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3040</td>
+      <td>Connection problem with auth service</td>
+    </tr>
+    <tr>
+      <td>3041</td>
+      <td>Missing or malformed api key</td>
+    </tr>
+    <tr>
+      <td>3042</td>
+      <td>transactionID route parameter must be non-empty</td>
+    </tr>
+    <tr>
+      <td>3043</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3044</td>
+      <td>transactionID route parameter must be non-empty</td>
+    </tr>
+    <tr>
+      <td>3045</td>
+      <td>Connection problem with payment-core service</td>
+    </tr>
+    <tr>
+      <td>3046</td>
+      <td>Connection problem in auth service</td>
+    </tr>
+    <tr>
+      <td>3047</td>
+      <td>id route parameter must not be an empty string</td>
+    </tr>
+    <tr>
+      <td>3049</td>
+      <td>Need at least one authentication method</td>
+    </tr>
+    <tr>
+      <td>3053</td>
+      <td>Payment session create request has failed</td>
+    </tr>
+    <tr>
+      <td>3054</td>
+      <td>Payment merchant initialization has failed</td>
+    </tr>
+    <tr>
+      <td>3055</td>
+      <td>Failed to validate account terminal link</td>
+    </tr>
+    <tr>
+      <td>3050</td>
+      <td>Failed to retrieve accountID from locals</td>
+    </tr>
+    <tr>
+      <td>3051</td>
+      <td>Failed to convert untyped accountID to typed accountID</td>
+    </tr>
+    <tr>
+      <td>3052</td>
+      <td>Empty accountID from local storage</td>
+    </tr>
+    <tr>
+      <td>3060</td>
+      <td>Failed to parse request body</td>
+    </tr>
+    <tr>
+      <td>3061</td>
+      <td>Failed to marshal request body</td>
+    </tr>
+    <tr>
+      <td>3056</td>
+      <td>Failed to retrieve store id from local storage</td>
+    </tr>
+    <tr>
+      <td>3057</td>
+      <td>Failed to convert store id from local storage</td>
+    </tr>
+    <tr>
+      <td>3058</td>
+      <td>Retrieved store id from local storage is empty</td>
+    </tr>
+    <tr>
+      <td>3062</td>
+      <td>Failed to retrieve merchant id from local storage</td>
+    </tr>
+    <tr>
+      <td>3063</td>
+      <td>Failed to convert merchant id from local storage</td>
+    </tr>
+    <tr>
+      <td>3064</td>
+      <td>Retrieved local storage merchant id is empty</td>
+    </tr>
+    <tr>
+      <td>3065</td>
+      <td>Failed to validate account store link</td>
+    </tr>
+    <tr>
+      <td>3066</td>
+      <td>Failed to retrieve merchants for account provided</td>
+    </tr>
+    <tr>
+      <td>3067</td>
+      <td>Failed to unmarshal response data</td>
+    </tr>
+    <tr>
+      <td>3068</td>
+      <td>Failed to process checkout 3d check request</td>
+    </tr>
   </tbody>
 </table>
 </ExpandableTable>
