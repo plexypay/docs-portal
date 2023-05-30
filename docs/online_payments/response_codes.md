@@ -891,82 +891,6 @@ This page provides error and response codes our API returns
       <td>Request SCA exemption is invalid, must be from the set ['low_value']</td>
     </tr>
     <tr>
-      <td>8018</td>
-      <td>Failed to validate account terminal link - empty account ID</td>
-    </tr>
-    <tr>
-      <td>8019</td>
-      <td>Unable to extract terminal ID from request body</td>
-    </tr>
-    <tr>
-      <td>8020</td>
-      <td>Failed to retrieve account by ID</td>
-    </tr>
-    <tr>
-      <td>8021</td>
-      <td>Requested account does not exist</td>
-    </tr>
-    <tr>
-      <td>8022</td>
-      <td>Failed to retrieve account external system value</td>
-    </tr>
-    <tr>
-      <td>8023</td>
-      <td>Requested account terminal link does not exist</td>
-    </tr>
-    <tr>
-      <td>8024</td>
-      <td>Requested account terminal link does not exist</td>
-    </tr>
-    <tr>
-      <td>8025</td>
-      <td>Failed to update account terminal link</td>
-    </tr>
-    <tr>
-      <td>8026</td>
-      <td>Failed to update account terminal link</td>
-    </tr>
-    <tr>
-      <td>8027</td>
-      <td>Failed to retrieve terminal by ID</td>
-    </tr>
-    <tr>
-      <td>8028</td>
-      <td>Requested terminal does not exist</td>
-    </tr>
-    <tr>
-      <td>8029</td>
-      <td>Requested terminal does not exist</td>
-    </tr>
-    <tr>
-      <td>8030</td>
-      <td>Failed to retrieve terminal external system value</td>
-    </tr>
-    <tr>
-      <td>8031</td>
-      <td>Failed to retrieve terminal external system value</td>
-    </tr>
-    <tr>
-      <td>8032</td>
-      <td>Failed to create account terminal link</td>
-    </tr>
-    <tr>
-      <td>8033</td>
-      <td>Failed to create account terminal link</td>
-    </tr>
-    <tr>
-      <td>8034</td>
-      <td>Failed to validate account merchant link - empty account ID</td>
-    </tr>
-    <tr>
-      <td>8035</td>
-      <td>Failed to retrieve account merchant link</td>
-    </tr>
-    <tr>
-      <td>8036</td>
-      <td>Request is not allowed - Current account does not have any active account merchant links</td>
-    </tr>
-    <tr>
       <td>3001</td>
       <td>Authorization header is missing</td>
     </tr>
@@ -1225,6 +1149,82 @@ This page provides error and response codes our API returns
     <tr>
       <td>3068</td>
       <td>Failed to process checkout 3d check request</td>
+    </tr>
+    <tr>
+      <td>8018</td>
+      <td>Failed to validate account terminal link - empty account ID</td>
+    </tr>
+    <tr>
+      <td>8019</td>
+      <td>Unable to extract terminal ID from request body</td>
+    </tr>
+    <tr>
+      <td>8020</td>
+      <td>Failed to retrieve account by ID</td>
+    </tr>
+    <tr>
+      <td>8021</td>
+      <td>Requested account does not exist</td>
+    </tr>
+    <tr>
+      <td>8022</td>
+      <td>Failed to retrieve account external system value</td>
+    </tr>
+    <tr>
+      <td>8023</td>
+      <td>Requested account terminal link does not exist</td>
+    </tr>
+    <tr>
+      <td>8024</td>
+      <td>Requested account terminal link does not exist</td>
+    </tr>
+    <tr>
+      <td>8025</td>
+      <td>Failed to update account terminal link</td>
+    </tr>
+    <tr>
+      <td>8026</td>
+      <td>Failed to update account terminal link</td>
+    </tr>
+    <tr>
+      <td>8027</td>
+      <td>Failed to retrieve terminal by ID</td>
+    </tr>
+    <tr>
+      <td>8028</td>
+      <td>Requested terminal does not exist</td>
+    </tr>
+    <tr>
+      <td>8029</td>
+      <td>Requested terminal does not exist</td>
+    </tr>
+    <tr>
+      <td>8030</td>
+      <td>Failed to retrieve terminal external system value</td>
+    </tr>
+    <tr>
+      <td>8031</td>
+      <td>Failed to retrieve terminal external system value</td>
+    </tr>
+    <tr>
+      <td>8032</td>
+      <td>Failed to create account terminal link</td>
+    </tr>
+    <tr>
+      <td>8033</td>
+      <td>Failed to create account terminal link</td>
+    </tr>
+    <tr>
+      <td>8034</td>
+      <td>Failed to validate account merchant link - empty account ID</td>
+    </tr>
+    <tr>
+      <td>8035</td>
+      <td>Failed to retrieve account merchant link</td>
+    </tr>
+    <tr>
+      <td>8036</td>
+      <td>Request is not allowed - Current account does not have any active account merchant links</td>
     </tr>
   </tbody>
 </table>
