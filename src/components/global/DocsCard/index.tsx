@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import styles from "./styles.module.scss";
+import Chips from '../Chips/Index';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
@@ -13,6 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   iconset?: string;
   ionicon?: string;
   img?: string;
+  chips?: string;
   size?: "md" | "lg";
 }
 
@@ -28,6 +30,7 @@ function DocsCard(props: Props): JSX.Element {
 
   const content = (
     <>
+      {props.chips && <Chips className='Card-chips' bgColor='rgb(45 87 234 / 72%)'>{props.chips}</Chips>}
       {props.img && <img src={useBaseUrl(props.img)} className="Card-image" />}
       <div className="Card-container">
         {(props.icon || hoverIcon) && (

@@ -42,6 +42,7 @@ docs-card[disabled]::after {
 }
 
 .card {
+  position: relative;
   color: inherit;
   background-color: var(--docs-card-bg-c);
   border: 1px solid var(--docs-card-border-c);
@@ -193,6 +194,15 @@ docs-card[disabled]::after {
     font-size: 20px;
   }
 
+  .Card-chips {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+  }
+
+  .Card--opacity-6 .Card-container {
+    opacity: 0.6;
+  }
   aside docs-card {
     max-width: 240px;
   }
