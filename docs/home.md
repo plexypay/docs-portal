@@ -13,16 +13,16 @@ import DocsCards from '/src/components/global/DocsCards';
 Integrating your payment solution with ForoPay is easy and flexible, with several options to suit your needs. Whether you prefer to use our hosted checkout page or build your own UI and process transactions using our APIs, we've got you covered.
 
 <DocsCards>
-  <DocsCard header="Hosted page" >
+  <DocsCard header="Hosted page" chips="soon" className="Card--opacity-6" >
     <p>Use ForoPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
   </DocsCard>
-  <DocsCard header="Popup" >
+  <DocsCard header="Popup" chips="soon" className="Card--opacity-6" >
     <p>Allow visitors to securely shop on your webshop without leaving your site.</p>
   </DocsCard>
-  <DocsCard header="Drop-in" >
+  <DocsCard header="Drop-in" chips="soon" className="Card--opacity-6" >
     <p>List all payment methods in one block with the drop-in integration.</p>
   </DocsCard>
-  <DocsCard header="Hosted fields" >
+  <DocsCard header="Hosted fields" chips="soon" className="Card--opacity-6" >
     <p>Maintain your website's branding while ensuring card data security with hosted fields.</p>
   </DocsCard>
   <DocsCard header="API only" href="/docs-portal/online_payments/accept_payments/api">
