@@ -472,7 +472,7 @@ This section provides information on how to initiate a payment transaction. The 
 </Tabs>
 
 #### Card data encryption:
-You can get RSA public key for encryption int [step 2 in Getting Started](https://foropay.github.io/docs-portal/getting_started/#step-2-get-your-api-key)
+You can get RSA public key for encryption in [step 2 in Getting Started](https://foropay.github.io/docs-portal/getting_started/#step-2-get-your-api-key)
 
 #### Response:
 
@@ -776,32 +776,32 @@ You can get RSA public key for encryption int [step 2 in Getting Started](https:
   <tbody>
     <tr>
       <td>status</td>
-      <td>'3ds-skipped'</td>
+      <td>3ds-skipped</td>
       <td></td>
     </tr>
     <tr>
       <td>status</td>
-      <td>'3ds-required'</td>
+      <td>3ds-required</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>'visa'</td>
+      <td>visa</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>'mastercard'</td>
+      <td>mastercard</td>
       <td></td>
     </tr>
     <tr>
       <td>threeDS.type</td>
-      <td>"frictionless"</td>
+      <td>frictionless</td>
       <td>3DS-2 authentication type</td>
     </tr>
     <tr>
       <td>threeDS.type</td>
-      <td>"challengeflow"</td>
+      <td>challengeflow</td>
       <td>3DS-2 authentication type</td>
     </tr>
   </tbody>
@@ -1137,12 +1137,12 @@ By implementing 3D Secure 2, you can bolster the security of your online payment
   <tbody>
     <tr>
       <td>cardScheme</td>
-      <td>'visa'</td>
+      <td>visa</td>
       <td></td>
     </tr>
     <tr>
       <td>cardScheme</td>
-      <td>'mastercard'</td>
+      <td>mastercard</td>
       <td></td>
     </tr>
   </tbody>
