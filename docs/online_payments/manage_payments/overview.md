@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+sidebar_custom_props:
+  description: Perform different payment actions such as capture, refund or cancel
 ---
 
 import DocsCard from '/src/components/global/DocsCard';

@@ -32,7 +32,7 @@ You can later use the received keys to send requests to our API and encrypt card
 
 ## Step 3. Build your integration
 
-Start building your integration using your test account. You can also proceed with the application for a live account, but waiting for your application to be approved may be beneficial before completing the full integration.
+Start building your integration using your test account. You can proceed with application for a live account. While waiting for the application to be approved, you can start building the integration using your test account.
 
 Choose the integration option that best suits your business needs:
 

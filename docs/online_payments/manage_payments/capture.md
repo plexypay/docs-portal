@@ -1,5 +1,7 @@
 ---
 sidebar_position: 2
+sidebar_custom_props:
+  description: Partial or full capture request.
 ---
 import EndpointsTab from '/src/components/global/EndpointsTab';
 import DocsTable from '/src/components/global/DocsTable';

@@ -5,6 +5,10 @@ docs-cards {
   grid-gap: 1.35rem;
 }
 
+docs-cards.two-columns {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
 docs-cards > docs-card {
   font-size: inherit;
   max-width: none;

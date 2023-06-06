@@ -1,5 +1,7 @@
 ---
 sidebar_position: 4
+sidebar_custom_props:
+  description: Cancel a payment.
 ---
 import EndpointsTab from '/src/components/global/EndpointsTab';
 import DocsTable from '/src/components/global/DocsTable';

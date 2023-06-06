@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+sidebar_custom_props:
+  description: ForoPay offers several solutions for accepting payments.
 ---
 
 import DocsCard from '/src/components/global/DocsCard';
