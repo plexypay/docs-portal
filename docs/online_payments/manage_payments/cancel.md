@@ -10,8 +10,8 @@ import TabItem from '@theme/TabItem';
 
 # Cancel
 
-Cancel request.
-Only transactions with status "authorized" can be cancelled.
+Use this endpoint to cancel a payment. 
+Only transactions with the status "authorized" can be cancelled.
 
 #### Endpoints
 
@@ -42,7 +42,7 @@ Only transactions with status "authorized" can be cancelled.
 </table>
 
 #### Request
-No request body is require as this endpoint does not expect any parameters.
+No request body is required as this endpoint does not expect any parameters.
 
 #### Response:
 
