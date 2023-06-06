@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+sidebar_custom_props:
+  description: Error and response codes our API returns.
 ---
 
 import ExpandableTable from '/src/components/global/ExpandableTable';

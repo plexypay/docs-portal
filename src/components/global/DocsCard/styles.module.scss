@@ -203,6 +203,11 @@ docs-card[disabled]::after {
   .Card--opacity-6 .Card-container {
     opacity: 0.6;
   }
+
+  .full-width-card {
+    max-width: 100%;
+  }
+
   aside docs-card {
     max-width: 240px;
   }

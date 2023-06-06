@@ -1,5 +1,7 @@
 ---
 sidebar_position: 3
+sidebar_custom_props:
+  description: Partial or full refund request.
 ---
 import EndpointsTab from '/src/components/global/EndpointsTab';
 import DocsTable from '/src/components/global/DocsTable';
