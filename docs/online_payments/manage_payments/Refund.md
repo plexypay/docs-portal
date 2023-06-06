@@ -10,14 +10,14 @@ import TabItem from '@theme/TabItem';
 
 # Refund
 
-Partial or full refund request.
-Only transactions with status "charged" can be refunded.
+This endpoint allows you to make partial or full refund requests for transactions with the status "charged".
+Only transactions with the status "charged" can be refunded.
 
 #### Endpoints
 
 <EndpointsTab method="post" url="/payments/{transactionId}/refund" />
 
-#### Request header parametres:
+#### Request header parameters:
 
 <table>
    <thead>
@@ -101,7 +101,7 @@ Only transactions with status "charged" can be refunded.
       <td>float64 | nullable</td>
       <td>Optional (value of null) if full refund is required</td>
       <td>refund amount</td>
-      <td>format: 00.00, must be positive number; if value is set to null, full refund will be processed</td>
+      <td>format: 00.00, must be a positive number; if the value is set to null, a full refund will be processed</td>
     </tr>
   </tbody>
 </table>

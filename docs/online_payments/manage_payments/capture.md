@@ -10,14 +10,14 @@ import TabItem from '@theme/TabItem';
 
 # Capture
 
-Partial or full capture request.
-Only transactions with status "authorized" can be captured.
+This endpoint allows you to make partial or full capture requests for transactions with the status "authorized". 
+Only transactions with the status "authorized" can be captured.
 
 #### Endpoints
 
 <EndpointsTab method="post" url="/payments/{transactionId}/capture" />
 
-#### Request header parametres:
+#### Request header parameters:
 
 <table>
    <thead>
@@ -101,7 +101,7 @@ Only transactions with status "authorized" can be captured.
       <td>float64 | nullable</td>
       <td>Optional (value of null) if full capture is required</td>
       <td>capture amount</td>
-      <td>format: 00.00, must be positive number; if value is set to null, full capture will be processed</td>
+      <td>format: 00.00, must be a positive number; if the value is set to null, full capture will be processed</td>
     </tr>
   </tbody>
 </table>
