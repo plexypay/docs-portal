@@ -30,47 +30,47 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1003</td>
-      <td>Payment session was not found by the id provided</td>
+      <td>Unable to find payment session associeated with the provided id</td>
     </tr>
     <tr>
       <td>1004</td>
-      <td>Failed to retrieve payment session by the id provided</td>
+      <td>Failed to retrieve the payment session using the provided id</td>
     </tr>
     <tr>
       <td>1005</td>
-      <td>Failed to create payment session - failed to parse JSON request body</td>
+      <td>Failed to create the payment session because there is an issue with parsing the JSON request body</td>
     </tr>
     <tr>
       <td>1006</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1007</td>
-      <td>Failed to retrieve merchant token from terminal settings</td>
+      <td>Failed to retrieve the merchant token from the terminal settings</td>
     </tr>
     <tr>
       <td>1008</td>
-      <td>Failed to create common request</td>
+      <td>Failed to compose the request</td>
     </tr>
     <tr>
       <td>1009</td>
-      <td>Failed to send 3D init request</td>
+      <td>Failed to initiate 3DS authentication process</td>
     </tr>
     <tr>
       <td>1010</td>
-      <td>Failed to parse 3D init response</td>
+      <td>3DS authentication process failed</td>
     </tr>
     <tr>
       <td>1012</td>
-      <td>Failed to send 3D check request</td>
+      <td>3DS authentication process failed</td>
     </tr>
     <tr>
       <td>1013</td>
-      <td>Unsuccessful transaction 3D init response data</td>
+      <td>3DS authentication process failed</td>
     </tr>
     <tr>
       <td>1014</td>
-      <td>Failed to parse 3D check response</td>
+      <td>3DS authentication process failed</td>
     </tr>
     <tr>
       <td>1015</td>
@@ -106,79 +106,79 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1023</td>
-      <td>Failed to change transaction status to 'failed'</td>
+      <td>Failed to change transaction status to 'rejected'</td>
     </tr>
     <tr>
       <td>1024</td>
-      <td>Failed to create payment session - invalid payment provider</td>
+      <td>Failed to process purchase request</td>
     </tr>
     <tr>
       <td>1025</td>
-      <td>Failed to validate payment provider configuration</td>
+      <td>Failed to update the transaction</td>
     </tr>
     <tr>
       <td>1026</td>
-      <td>Failed to create payment session - invalid payment method</td>
+      <td>Failed to change transaction status to 'rejected'</td>
     </tr>
     <tr>
       <td>1027</td>
-      <td>Failed to validate payment method configuration</td>
+      <td>Failed to update the transaction</td>
     </tr>
     <tr>
       <td>1028</td>
-      <td>Failed to create payment session - invalid currency</td>
+      <td>Failed to change transaction status to 'failed'</td>
     </tr>
     <tr>
       <td>1029</td>
-      <td>Failed to validate currency configuration</td>
+      <td>Failed to change transaction status to 'rejected'</td>
     </tr>
     <tr>
       <td>1030</td>
-      <td>Failed to create payment session - invalid amount</td>
+      <td>Failed to change transaction status to 'failed'</td>
     </tr>
     <tr>
       <td>1031</td>
-      <td>Failed to validate amount configuration</td>
+      <td>Failed to initiate purchase request</td>
     </tr>
     <tr>
       <td>1032</td>
-      <td>Failed to create payment session - invalid callback URL</td>
+      <td>Failed to change transaction status to 'rejected'</td>
     </tr>
     <tr>
       <td>1033</td>
-      <td>Failed to validate callback URL configuration</td>
+      <td>Unsuccessful purchase request</td>
     </tr>
     <tr>
       <td>1034</td>
-      <td>Failed to create payment session - invalid return URL</td>
+      <td>Failed to change transaction status to 'rejected'</td>
     </tr>
     <tr>
       <td>1035</td>
-      <td>Failed to validate return URL configuration</td>
+      <td>Transaction initialization process failed</td>
     </tr>
     <tr>
       <td>1036</td>
-      <td>Failed to create payment session - invalid cancel URL</td>
+      <td>Failed to change transaction status to 'failed'</td>
     </tr>
     <tr>
       <td>1037</td>
-      <td>Failed to validate cancel URL configuration</td>
+      <td>Transaction initialization process failed</td>
     </tr>
     <tr>
       <td>1038</td>
-      <td>Failed to create payment session - invalid webhook URL</td>
+      <td>Transaction initialization process failed</td>
     </tr>
     <tr>
       <td>1039</td>
-      <td>Failed to validate webhook URL configuration</td>
+      <td>Transaction initialization process failed</td>
     </tr>
     <tr>
       <td>1041</td>
-      <td>Failed to retrieve transaction by id</td>
+      <td>Failed to retrieved the transaction with the provided id</td>
     </tr>
     <tr>
       <td>1056</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1057</td>
@@ -186,15 +186,15 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1058</td>
-      <td>TransactionID route parameter must be non-empty</td>
+      <td>TransactionID route parameter must not be empty</td>
     </tr>
     <tr>
       <td>1059</td>
-      <td>Failed to obtain transaction by id</td>
+      <td>Failed to retrieved the transaction with the provided id</td>
     </tr>
     <tr>
       <td>1060</td>
-      <td>Invalid transaction status to perform the operation. Must be authorized</td>
+      <td>Invalid transaction status to perform the operation. The transaction must be authorized</td>
     </tr>
     <tr>
       <td>1062</td>
@@ -206,15 +206,15 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1064</td>
-      <td>Failed to send capture request</td>
+      <td>Failed to initialize capture request</td>
     </tr>
     <tr>
       <td>1065</td>
-      <td>Failed to parse capture request</td>
+      <td>Failed to process capture request</td>
     </tr>
     <tr>
       <td>1066</td>
-      <td>Unsuccessful charge response. Non-zero response code</td>
+      <td>Unsuccessful charge request</td>
     </tr>
     <tr>
       <td>1067</td>
@@ -234,7 +234,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1071</td>
-      <td>Failed to parse preauthorization response</td>
+      <td>Failed to handle transaction preauthorization</td>
     </tr>
     <tr>
       <td>1072</td>
@@ -242,7 +242,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1073</td>
-      <td>Unsuccessful preauthorization response. Non-zero response code</td>
+      <td>Unsuccessful preauthorization request</td>
     </tr>
     <tr>
       <td>1074</td>
@@ -250,7 +250,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1075</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1076</td>
@@ -258,11 +258,11 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1077</td>
-      <td>TransactionID route parameter must be non-empty</td>
+      <td>TransactionID route parameter must not be empty</td>
     </tr>
     <tr>
       <td>1078</td>
-      <td>Failed to retrieve the transaction by id provided</td>
+      <td>Failed to retrieve the transaction with the provided id</td>
     </tr>
     <tr>
       <td>1079</td>
@@ -270,7 +270,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1080</td>
-      <td>Unable to refund transaction with zero balance</td>
+      <td>Unable to refund the transaction with zero balance</td>
     </tr>
     <tr>
       <td>1081</td>
@@ -286,27 +286,27 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1084</td>
-      <td>Failed to parse refund response</td>
+      <td>Failed to process the refund request</td>
     </tr>
     <tr>
       <td>1085</td>
-      <td>Unsuccessful refund response. Non-zero response code</td>
+      <td>Unsuccessful refund request</td>
     </tr>
     <tr>
       <td>1086</td>
-      <td>Failed to update transaction</td>
+      <td>Failed to update the transaction</td>
     </tr>
     <tr>
       <td>1087</td>
-      <td>TransactionID route parameter must be non-empty</td>
+      <td>TransactionID route parameter must not be empty</td>
     </tr>
     <tr>
       <td>1088</td>
-      <td>Failed to obtain transaction by id</td>
+      <td>Failed to obtain transaction with the provided id</td>
     </tr>
     <tr>
       <td>1089</td>
-      <td>Invalid transaction status to perform the operation, must be in 'authorized' status</td>
+      <td>Invalid transaction status to perform the operation. The transaction must be in 'authorized' status</td>
     </tr>
     <tr>
       <td>1091</td>
@@ -314,15 +314,15 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1092</td>
-      <td>Failed to send cancel request</td>
+      <td>Failed to initialize cancel request</td>
     </tr>
     <tr>
       <td>1093</td>
-      <td>Failed to parse cancel response</td>
+      <td>Failed to process cancel request</td>
     </tr>
     <tr>
       <td>1094</td>
-      <td>Unsuccessful cancel response. Non-zero response code</td>
+      <td>Unsuccessful cancel request</td>
     </tr>
     <tr>
       <td>1095</td>
@@ -330,7 +330,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1096</td>
-      <td>Failed to deserialize JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1099</td>
@@ -382,7 +382,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1117</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1118</td>
@@ -414,7 +414,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1126</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1127</td>
@@ -430,31 +430,31 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1132</td>
-      <td>Failed to parse terminal settings from JSON string</td>
+      <td>Failed to parse terminal settings from the JSON string</td>
     </tr>
     <tr>
       <td>1134</td>
-      <td>Failed to parse terminal settings from JSON string</td>
+      <td>Failed to parse terminal settings from the JSON string</td>
     </tr>
     <tr>
       <td>1135</td>
-      <td>Failed to obtain merchant token from terminal settings</td>
+      <td>Failed to obtain merchant token from the terminal settings</td>
     </tr>
     <tr>
       <td>1136</td>
-      <td>Failed to parse terminal settings from JSON string</td>
+      <td>Failed to parse terminal settings from the JSON string</td>
     </tr>
     <tr>
       <td>1137</td>
-      <td>Multiple refunds disabled in current merchant</td>
+      <td>Multiple refunds functionality is disabled for the current merchant</td>
     </tr>
     <tr>
       <td>1138</td>
-      <td>Transaction CardToken field expected to be not null</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1140</td>
-      <td>Failed to update transaction</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1141</td>
@@ -462,7 +462,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1142</td>
-      <td>Failed to obtain payment session by id</td>
+      <td>Failed to obtain payment session using the provided id</td>
     </tr>
     <tr>
       <td>1143</td>
@@ -470,19 +470,19 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1144</td>
-      <td>Failed to remove payment session from cache</td>
+      <td>Failed to initialize the payment</td>
     </tr>
     <tr>
       <td>1145</td>
-      <td>Failed to convert pgtype.uuid to string</td>
+      <td>Failed to handle 3DS authentication</td>
     </tr>
     <tr>
       <td>1146</td>
-      <td>Failed to remove payment session from cache</td>
+      <td>Failed to initialize the payment</td>
     </tr>
     <tr>
       <td>1147</td>
-      <td>Failed to convert map[string[]pgtype.UUID to map[string]string</td>
+      <td>Failed to create payment link</td>
     </tr>
     <tr>
       <td>1148</td>
@@ -490,7 +490,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1149</td>
-      <td>Failed to get customer by ID provided</td>
+      <td>Failed to get customer using the provided id</td>
     </tr>
     <tr>
       <td>1150</td>
@@ -498,7 +498,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1151</td>
-      <td>Failed to get a terminal id</td>
+      <td>Failed to create payment link</td>
     </tr>
     <tr>
       <td>1152</td>
@@ -510,31 +510,27 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1154</td>
-      <td>Failed to get payment link by merchant info</td>
+      <td>Failed to get payment link using the provided merchant info</td>
     </tr>
     <tr>
       <td>1155</td>
-      <td>Failed to retrieve currency</td>
+      <td>Failed to create payment link</td>
     </tr>
         <tr>
       <td>1156</td>
-      <td>Failed to retrieve merchant id</td>
+      <td>Failed to create payment link</td>
     </tr>
     <tr>
       <td>1157</td>
-      <td>Payment link does not exist by given id</td>
-    </tr>
-    <tr>
-      <td>1158</td>
-      <td>Both card data and card token id are null, at least one of them should not be null</td>
+      <td>Payment link does not exist the requested id</td>
     </tr>
     <tr>
       <td>1159</td>
-      <td>Failed to get payment link by id provided</td>
+      <td>Failed to get payment link by using the provided id</td>
     </tr>
     <tr>
       <td>1160</td>
-      <td>Failed to deserialize card token meta from JSON</td>
+      <td>Failed to initialize transaction</td>
     </tr>
     <tr>
       <td>1161</td>
@@ -590,19 +586,19 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1176</td>
-      <td>Failed to obtain transaction by id</td>
+      <td>Failed to obtain transaction using the provided id</td>
     </tr>
     <tr>
       <td>1177</td>
-      <td>Failed to get private key of given store from auth service</td>
+      <td>Failed to handle close event</td>
     </tr>
     <tr>
       <td>1178</td>
-      <td>Failed to obtain card type by id</td>
+      <td>Failed to obtain card type using the id provided</td>
     </tr>
     <tr>
       <td>1179</td>
-      <td>Failed to obtain transaction status by id</td>
+      <td>Failed to obtain transaction status using the id provided</td>
     </tr>
     <tr>
       <td>1180</td>
@@ -611,10 +607,6 @@ This page provides error and response codes our API returns
     <tr>
       <td>1181</td>
       <td>Callback already has been delivered to the given transaction</td>
-    </tr>
-    <tr>
-      <td>1182</td>
-      <td>Failed to send callback of the given transaction</td>
     </tr>
     <tr>
       <td>1183</td>
@@ -626,39 +618,39 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1185</td>
-      <td>Failed to set callback delivered field to true of the given transaction</td>
+      <td>Failed to handle close event</td>
     </tr>
     <tr>
       <td>1186</td>
-      <td>Transaction event handler by the given name not found</td>
+      <td>Failed to handle payment event</td>
     </tr>
     <tr>
       <td>1187</td>
-      <td>Failed to obtain payment method by id</td>
+      <td>Failed to obtain payment method using the provided id</td>
     </tr>
     <tr>
       <td>1188</td>
-      <td>Transaction by the given id not found</td>
+      <td>Failed to handle payment event</td>
     </tr>
     <tr>
       <td>1189</td>
-      <td>Failed to marshal callback data to JSON</td>
+      <td>Failed to handle transaction close event</td>
     </tr>
     <tr>
       <td>1190</td>
-      <td>Given transaction not allowed by its status to call close callback</td>
+      <td>Failed to handle transaction close event</td>
     </tr>
     <tr>
       <td>1191</td>
-      <td>Failed to parse JSON request data</td>
+      <td>Failed to parse the JSON request data</td>
     </tr>
         <tr>
       <td>1192</td>
-      <td>Failed to deserialize card token meta from JSON</td>
+      <td>Failed to preauthorize the transaction</td>
     </tr>
     <tr>
       <td>1193</td>
-      <td>Failed to create a new transaction from external request</td>
+      <td>Failed to create a new transaction from the external request</td>
     </tr>
     <tr>
       <td>1194</td>
@@ -666,19 +658,19 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1195</td>
-      <td>Failed to decrypt card data from external request</td>
+      <td>Failed to decrypt card data from the external request</td>
     </tr>
     <tr>
       <td>1197</td>
-      <td>Failed to create a transaction from internal request</td>
+      <td>Failed to create a new transaction from the request</td>
     </tr>
     <tr>
       <td>1198</td>
-      <td>Failed to create a common request</td>
+      <td>Failed to handle the payment request</td>
     </tr>
     <tr>
       <td>1199</td>
-      <td>Failed to decrypt card data from internal request</td>
+      <td>Failed to handle the payment request</td>
     </tr>
     <tr>
       <td>1200</td>
@@ -698,87 +690,87 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1204</td>
-      <td>Failed to deserialize card token meta from JSON</td>
+      <td>Failed to handle purchase request</td>
     </tr>
     <tr>
       <td>1205</td>
-      <td>Failed to update card token</td>
+      <td>Failed to process purchase request</td>
     </tr>
     <tr>
       <td>1206</td>
-      <td>Failed to marshal card token meta to JSON</td>
+      <td>Failed to process preauthorization request</td>
     </tr>
     <tr>
       <td>1207</td>
-      <td>Failed to marshal card token meta to JSON</td>
+      <td>Failed to process purchase request</td>
     </tr>
     <tr>
       <td>1208</td>
-      <td>Failed to marshal card token meta to JSON</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1209</td>
-      <td>Failed to create card token</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1210</td>
-      <td>Failed to update card token</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1211</td>
-      <td>Failed to update card token</td>
+      <td>Failed to process preauthorization request</td>
     </tr>
     <tr>
       <td>1212</td>
-      <td>Failed to obtain card token by id and merchant id</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1214</td>
-      <td>Failed to get transaction stamp from acquiring operator response</td>
+      <td>Unsuccessful create transaction request</td>
     </tr>
     <tr>
       <td>1215</td>
-      <td>Failed to get transaction stamp from acquiring operator response</td>
+      <td>Unsuccessful create transaction request</td>
     </tr>
     <tr>
       <td>1216</td>
-      <td>Failed to get transaction stamp from acquiring operator response</td>
+      <td>Unsuccessful create transaction request</td>
     </tr>
     <tr>
       <td>1217</td>
-      <td>Failed to get init token from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1218</td>
-      <td>Failed to get init token from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1219</td>
-      <td>Failed to get init token from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1220</td>
-      <td>Failed to get tokenized card id from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1221</td>
-      <td>Failed to get tokenized card id from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1222</td>
-      <td>Failed to get tokenized card id from acquiring operator response</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1223</td>
-      <td>Given card token's EquiringOperatorToken field expected to be not nil, nil value found</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1224</td>
-      <td>Transaction.CardTokenID and Transaction.CardToken property expected to be not nil</td>
+      <td>Failed to process purchase request</td>
     </tr>
     <tr>
       <td>1225</td>
-      <td>Transaction.CardTokenID and Transaction.CardToken property expected to be not nil</td>
+      <td>Failed to process purchase request</td>
     </tr>
     <tr>
       <td>1226</td>
@@ -802,7 +794,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1232</td>
-      <td>An error occurred while attempting to save transaction history</td>
+      <td>Failed to save transaction history﻿</td>
     </tr>
     <tr>
       <td>1233</td>
@@ -810,19 +802,19 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1234</td>
-      <td>Failed to extract transaction store id</td>
+      <td>Failed to validate the transaction ownership</td>
     </tr>
     <tr>
       <td>1235</td>
-      <td>Account store id does not match with transaction store id</td>
+      <td>Failed to validate the transaction ownership</td>
     </tr>
     <tr>
       <td>1236</td>
-      <td>Failed to extract transaction merchant id</td>
+      <td>Failed to validate the transaction ownership</td>
     </tr>
     <tr>
       <td>1237</td>
-      <td>Account merchant id does not match with transaction merchant id</td>
+      <td>Failed to validate the transaction ownership</td>
     </tr>
     <tr>
       <td>1238</td>
@@ -834,23 +826,23 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1240</td>
-      <td>Failed to determine card type</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1241</td>
-      <td>Failed to retrieve card scheme for card type id provided</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1242</td>
-      <td>Failed to retrieve card scheme for card type id provided</td>
+      <td>Failed to initialize the transaction</td>
     </tr>
     <tr>
       <td>1243</td>
-      <td>Failed to process the request - no 3DS notification URL was provided</td>
+      <td>Failed to process the request because no 3DS notification url was provided</td>
     </tr>
     <tr>
       <td>1444</td>
-      <td>Failed to parse JSON request body</td>
+      <td>Failed to parse the JSON request body</td>
     </tr>
     <tr>
       <td>1445</td>
@@ -862,23 +854,23 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>1447</td>
-      <td>Unable to retrieve transaction by id provided</td>
+      <td>Unable to retrive transaction using the provided id</td>
     </tr>
     <tr>
       <td>1449</td>
-      <td>Failed to process the request</td>
+      <td>Failed to process 3DS request</td>
     </tr>
     <tr>
       <td>1450</td>
-      <td>Failed to retrieve card info from card token</td>
+      <td>Failed to process 3DS request</td>
     </tr>
     <tr>
       <td>1451</td>
-      <td>Failed to process the request - acquiring operator returned an error</td>
+      <td>Failed to process 3DS request</td>
     </tr>
     <tr>
       <td>1453</td>
-      <td>Given transaction does not have a linked card token</td>
+      <td>Provided transaction does not have a linked card token</td>
     </tr>
     <tr>
       <td>1454</td>
@@ -894,63 +886,63 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3001</td>
-      <td>Authorization header is missing</td>
+      <td>Missing or malformed api key</td>
     </tr>
     <tr>
       <td>3002</td>
-      <td>Private key required for authentication</td>
+      <td>Missing or malformed api key</td>
     </tr>
     <tr>
       <td>3003</td>
-      <td>Private key required for authentication</td>
+      <td>Missing or malformed api key</td>
     </tr>
     <tr>
       <td>3004</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3005</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3006</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3007</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3008</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3009</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3010</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3011</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3012</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3013</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3014</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3015</td>
-      <td>Connection problem with statement service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3016</td>
@@ -958,7 +950,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3017</td>
-      <td>Connection problem with statement service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3018</td>
@@ -966,51 +958,51 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3019</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3020</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3021</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3022</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3023</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3024</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3025</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3026</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3027</td>
-      <td>Connection problem with statement service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3028</td>
-      <td>Connection problem with payment-core service</td>
+      <td>ConConnection problem in underlying service</td>
     </tr>
     <tr>
       <td>3029</td>
-      <td>Connection problem with statement service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3030</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3031</td>
@@ -1018,23 +1010,23 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3033</td>
-      <td>userID property not found in context locals</td>
+      <td>Failed to process the request</td>
     </tr>
     <tr>
       <td>3034</td>
-      <td>Failed to context userID property of context locals</td>
+      <td>Failed to process the request</td>
     </tr>
     <tr>
       <td>3035</td>
-      <td>userID property of context locals mustn't be an empty string</td>
+      <td>Failed to process the request</td>
     </tr>
     <tr>
       <td>3036</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3037</td>
-      <td>Connection problem with dossier service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3038</td>
@@ -1042,11 +1034,11 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3039</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3040</td>
-      <td>Connection problem with auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3041</td>
@@ -1058,7 +1050,7 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3043</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3044</td>
@@ -1066,11 +1058,11 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3045</td>
-      <td>Connection problem with payment-core service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3046</td>
-      <td>Connection problem in auth service</td>
+      <td>Connection problem in underlying service</td>
     </tr>
     <tr>
       <td>3047</td>
@@ -1082,27 +1074,27 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3053</td>
-      <td>Payment session create request has failed</td>
+      <td>Create payment request has failed</td>
     </tr>
     <tr>
       <td>3054</td>
-      <td>Payment merchant initialization has failed</td>
+      <td>Merchant initialized payment request has failed</td>
     </tr>
     <tr>
       <td>3055</td>
-      <td>Failed to validate account terminal link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3050</td>
-      <td>Failed to retrieve accountID from locals</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3051</td>
-      <td>Failed to convert untyped accountID to typed accountID</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3052</td>
-      <td>Empty accountID from local storage</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3060</td>
@@ -1114,35 +1106,35 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>3056</td>
-      <td>Failed to retrieve store id from local storage</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3057</td>
-      <td>Failed to convert store id from local storage</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3058</td>
-      <td>Retrieved store id from local storage is empty</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3062</td>
-      <td>Failed to retrieve merchant id from local storage</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3063</td>
-      <td>Failed to convert merchant id from local storage</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3064</td>
-      <td>Retrieved local storage merchant id is empty</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3065</td>
-      <td>Failed to validate account store link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3066</td>
-      <td>Failed to retrieve merchants for account provided</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>3067</td>
@@ -1154,79 +1146,67 @@ This page provides error and response codes our API returns
     </tr>
     <tr>
       <td>8018</td>
-      <td>Failed to validate account terminal link - empty account ID</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8019</td>
-      <td>Unable to extract terminal ID from request body</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8020</td>
-      <td>Failed to retrieve account by ID</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8021</td>
-      <td>Requested account does not exist</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8022</td>
-      <td>Failed to retrieve account external system value</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8023</td>
-      <td>Requested account terminal link does not exist</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8024</td>
-      <td>Requested account terminal link does not exist</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8025</td>
-      <td>Failed to update account terminal link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8026</td>
-      <td>Failed to update account terminal link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8027</td>
-      <td>Failed to retrieve terminal by ID</td>
-    </tr>
-    <tr>
-      <td>8028</td>
-      <td>Requested terminal does not exist</td>
-    </tr>
-    <tr>
-      <td>8029</td>
-      <td>Requested terminal does not exist</td>
-    </tr>
-    <tr>
-      <td>8030</td>
-      <td>Failed to retrieve terminal external system value</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8031</td>
-      <td>Failed to retrieve terminal external system value</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8032</td>
-      <td>Failed to create account terminal link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8033</td>
-      <td>Failed to create account terminal link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8034</td>
-      <td>Failed to validate account merchant link - empty account ID</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8035</td>
-      <td>Failed to retrieve account merchant link</td>
+      <td>Failed to validate the account</td>
     </tr>
     <tr>
       <td>8036</td>
-      <td>Request is not allowed - Current account does not have any active account merchant links</td>
+      <td>Failed to validate the account</td>
     </tr>
   </tbody>
 </table>
