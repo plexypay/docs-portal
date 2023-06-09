@@ -473,8 +473,41 @@ This section provides information on how to initiate a payment transaction. The 
 </TabItem>
 </Tabs>
 
-#### Card data encryption:
-You can get RSA public key for encryption in [step 2 in Getting Started](https://foropay.github.io/docs-portal/getting_started/#step-2-get-your-api-key)
+### Card data encryption:
+
+Use the following RSA public key for encryption.
+
+<Tabs
+  groupId="rsa"
+  defaultValue="live"
+  values={[
+  {label: 'Live', value: 'live'},
+  {label: 'Sandbox', value: 'sandbox'},
+]}>
+<TabItem value="live">
+
+```
+
+```
+
+</TabItem>
+
+<TabItem value="sandbox">
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmGCrykg4o+ZqShJs2yum
+5GZiD5P/D8twtYqXInEOO+Td6TKuGakIYL/dXh89iCOMHeGxFwUVv7zY6h519J8y
+cPK5Ov44dNz6Sm21rJMaZM4bdGvDvNbg6SlUloL2bh4wfYfA2sKub4N4gEeG+KXd
+DHFvv+jfB2FPZXEx7FdikwfpWglYwKw3i33mChPeyXrB6wDMQRGRorNWbD/3MYbi
+LMujcwZW3BSqYkDCc0ab/M0JlDxGrTLuOB5Qc7R+RMFBfvjtA0r+lUUT31CQ4IcS
+qSIJu9KkYKm9Xx4FxaoxTymKrHR4YEKRieGFxbklUkl+q0zxM2fKJC01GAIIjZ9a
+LQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+</TabItem>
+</Tabs>
 
 #### Response:
 
@@ -839,9 +872,10 @@ You can get RSA public key for encryption in [step 2 in Getting Started](https:/
 
 :::info
 
-**Response & Error Code Descriptions check** *[here](https://foropay.github.io/docs-portal/online_payments/response_codes)*
+**Response Code Descriptions check** *[here](/docs-portal/online_payments/response_codes)*
 
-::::
+:::
+
 ## Managing 3D Secure
 
 To enhance the security of card-not-present (CNP) transactions, it is recommended to implement the 3D Secure 2 authentication protocol. This protocol adds an extra layer of verification and ensures compliance with authentication regulations, such as PSD2 SCA, while also enabling liability shift rules.
