@@ -473,7 +473,7 @@ This section provides information on how to initiate a payment transaction. The 
 </TabItem>
 </Tabs>
 
-### Card data encryption:
+### Card data encryption
 
 Use the following RSA public key for encryption.
 
