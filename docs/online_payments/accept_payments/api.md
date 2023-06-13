@@ -487,7 +487,15 @@ Use the following RSA public key for encryption.
 <TabItem value="live">
 
 ```
-
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAswwqS5WBuidIfRnGYblj
+KF84svc6CidLBjAcUr9uiDBHNAHMnSXYANPgnBrht2w46+RZ9FbtcR5MX7JNQdkE
+ZE6jW0rzFrZmvgBmIk8AJdPb0FLvIJBn4jpPeSEI68qakOWr0hgzg2T8vV5D92pU
+e/+HgdphNjuqCPcmCf4oULc5vaWgazhpJsh5EV8rMHM3BJpLKwDJXn8Gu2imtbl5
+cZqZe7+6HrMSCuUbhtAuua228MiotK67QA9+WAecLJaBYwWoEVbRNfg6UdcXCkO3
+sEMy/YEPPWo0XxsjaSFbgZ3wXoN0LH1X9hZmhRvLzIXnNtQHGkw+WYYMoulnFld9
+BwIDAQAB
+-----END PUBLIC KEY-----
 ```
 
 </TabItem>
