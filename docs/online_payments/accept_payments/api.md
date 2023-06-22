@@ -539,12 +539,11 @@ LQIDAQAB
   "captured": true,
   "message": "Success",
   "threeDS": {
-      "status": "successful",
-      "electronicCommerceIndicator": "05",
-      "acsTranscationId": "11e3879f-327b-4c77-8c14-1f53aaa15adc",
-      "mpiTransactionId": "d1a756e2-4f6a-4ea8-bf83-9caccf260379",
-      "directoryTransactionId": "e13c83ee-065c-4c58-abc3-ef859f4b6a52",
-      "type": "frictionless"
+        "html": "<!doctype html><html lang='en'><head><title>ACS Authentication Page</  title><script src='https://www.threedsecurempi.com/EMVTDS/jsp/CardHolder/PostForm.js'></script><meta charset='utf-8'></head><body><form name='payer' id='payer' action='https&#x3A;&#x2F;&#x2F;www.threedsecurempi.com&#x2F;EMVTDS&#x2F;AUT&#x3F;Action&#x3D;ProcessCReq' method='POST' style='display: none'><input type=\"hidden\" name=\"threeDSSessionData\" value=\"eyJ0cmFuc2FjdGlvbklkIjoiYzNiY2ZkNDAtMjg1Yi00OTZhLTgyYzMtY2UxYzIyNzFhYWUyIn0\"/><input type='hidden' name='creq' value='eyJhY3NUcmFuc0lEIjoiN2RjZTJjZTctYmQ4OC00YzZmLWEyNzgtOWU5MzFlYzU2OThiIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJjMDllY2Q5MC02MGI2LTRjMDktODc1Mi0yNmMxOWE4NGU2ZjMiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0'/><script type='application/javascript' >document.forms[0].submit()</script></form></body></html>",
+        "type": "challengeflow",
+        "creq": "eyJhY3NUcmFuc0lEIjoiN2RjZTJjZTctYmQ4OC00YzZmLWEyNzgtOWU5MzFlYzU2OThiIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJjMDllY2Q5MC02MGI2LTRjMDktODc1Mi0yNmMxOWE4NGU2ZjMiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0",
+        "threeDSSessionData": "eyJ0cmFuc2FjdGlvbklkIjoiYzNiY2ZkNDAtMjg1Yi00OTZhLTgyYzMtY2UxYzIyNzFhYWUyIn0",
+        "action": "https://www.threedsecurempi.com/EMVTDS/AUT?Action=ProcessCReq"
   },
   "status": "3ds-skipped",
   "cardTokenId": "7bafca06-9031-44bf-9289-c66e35ddbd91",
@@ -632,34 +631,24 @@ LQIDAQAB
          <td>html generated pop-up window for entering 3ds password</td>
       </tr>
       <tr>
-         <td>threeDS.status</td>
-         <td>string</td>
-         <td>3DS-2 process status</td>
-      </tr>
-      <tr>
-         <td>threeDS.electronicCommerceIndicator</td>
-         <td>string</td>
-         <td>generated electronic commerce indicator</td>
-      </tr>
-      <tr>
-         <td>threeDS.acsTranscationId</td>
-         <td>string</td>
-         <td>acs transaction id</td>
-      </tr>
-      <tr>
-         <td>threeDS.mpiTransactionId</td>
-         <td>string</td>
-         <td>mpi transaction id</td>
-      </tr>
-      <tr>
-         <td>threeDS.directoryTransactionId</td>
-         <td>string</td>
-         <td>directory transaction id</td>
-      </tr>
-      <tr>
          <td>threeDS.type</td>
          <td>string</td>
          <td>3DS-2 type</td>
+      </tr>
+      <tr>
+         <td>threeDS.creq</td>
+         <td>string</td>
+         <td>creq data to be sent to ACS server</td>
+      </tr>
+      <tr>
+         <td>threeDS.threeDSSessionData</td>
+         <td>string</td>
+         <td>encrypted 3DS Session data</td>
+      </tr>
+      <tr>
+         <td>threeDS.action</td>
+         <td>string</td>
+         <td>ACS server action URL</td>
       </tr>
       <tr>
          <td>status</td>
@@ -884,17 +873,78 @@ LQIDAQAB
 
 :::
 
-## Managing 3D Secure
+## Managing 3D Secure 2
 
-To enhance the security of card-not-present (CNP) transactions, it is recommended to implement the 3D Secure 2 authentication protocol. This protocol adds an extra layer of verification and ensures compliance with authentication regulations, such as PSD2 SCA, while also enabling liability shift rules.
+The latest version of 3D Secure 2 offers an enhanced authentication 
+experience for online payments, incorporating a wider range of data, 
+biometric authentication, and improved security measures. This API 
+documentation provides guidance on managing 3D Secure 2 transactions 
+and covers the authentication flows, necessary steps, and handling 
+different response statuses to ensure a secure and streamlined payment 
+experience for your customers.
 
-#### We offer two options to handle 3D Secure authentication:
+Authentication Flows: 3D Secure 2 transactions can follow either a 
+frictionless or challenge authentication flow, depending on the 
+requirements set by the card issuer.
 
-- **Native**: With this option, the authentication process takes place within your website or mobile app. The card issuer utilizes passive, biometric, and two-factor authentication methods to verify the transaction. To learn more about the various 3D Secure 2 authentication flows, please refer to our documentation.
+- **Frictionless Flow**: In the frictionless flow, the acquirer, issuer, and 
+card scheme exchange necessary information in the background 
+through passive authentication. If the issuer validates and approves 
+the transaction, it is completed without any further cardholder 
+interaction.
 
-- **Redirect**: In this option, customers are redirected to the card issuer's website to provide additional authentication data, such as a password or an SMS verification code. It's worth noting that the redirect approach may lead to lower conversion rates due to potential technical errors during the redirection process, or customers abandoning the authentication procedure.
+- **Challenge Flow**: The challenge flow occurs when the issuer requires 
+additional cardholder interaction to verify the transaction. This can 
+involve biometrics, two-factor authentication, or other methods 
+based on SCA (Strong Customer Authentication) factors. In a web-
+based integration, the challenge might be prompted immediately 
+after submitting a payment request.
 
-By implementing 3D Secure 2, you can bolster the security of your online payments and ensure compliance with regulatory requirements.
+#### How it works
+To fully implement 3D Secure 2 support, you need to create your own 
+client-side and server-side implementations. The following steps outline 
+the process:
+
+- **Submitting a Payment Request**: To initiate the authentication 
+process, send a payment request with the required 3D Secure 2 
+objects. Specify your "threeDSNotificationUrl," which is an Absolute 
+URL where the issuer/ACS (Access Control Server) can post a 
+base64url encoded Challenge Response (CRes) message containing 
+the challenge result.
+
+:::info
+
+**Note:** You can include additional parameters to improve authorization 
+rates and increase the likelihood of a frictionless flow. It is not mandatory 
+to include all additional parameters. Send only the parameters you can 
+accurately provide or those that are mandatory in specific scenarios.
+
+:::
+
+- **Handling the response “success” and “status” fields**: Upon receiving
+a response, check the "status" field to determine the next steps:
+  - **"3ds-skipped"**: If you receive this response, it means the transaction
+was exempted or out-of-scope for 3D Secure 2.
+  - **"3ds-required"**: This status indicates that the issuer requires 
+interaction with the cardholder. Proceed to the Challenge Flow.
+  - **"3ds-completed"**: If the status is "3ds-completed," it means that the 
+3D Secure 2 authentication was Frictionless, and the payment 
+authorization was attempted.
+
+#### Handling the Challenge Flow
+In case the response status is "3ds-required", the issuer requires further 
+cardholder interaction. To handle the challenge flow please follow the next
+steps:
+- Create an iframe using either the "threeDS.html" field, which 
+contains ready-to-use HTML code, or build your own code using the 
+"threeDS.action" and "threeDS.creq" fields.
+- Send a challenge request to the issuer (ACS) and let the cardholder 
+complete the authentication process.
+- Get the challenge result (CRes) at your specified 
+"threeDSNotificationUrl" from the issuer (ACS).
+- Submit the challenge result (CRes) and ForoPay Transaction ID to 
+ForoPay using the provided endpoint described below.
+
 
 #### Endpoints
 

@@ -124,7 +124,14 @@ Only transactions with the status "authorized" can be captured.
 ```json
 {
     "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
-    "authCode": "856156"
+    "responseCode": "00",
+    "networkTransactionReference": "0000003877089021874A",
+    "authCode": "231351",
+    "amount": 56.41,
+    "orderReference": "1667207373325",
+    "remainingBalance": 56.41,
+    "success": true,
+    "message": "Successfully captured the transaction"
 }
 ```
 
@@ -160,9 +167,39 @@ Only transactions with the status "authorized" can be captured.
          <td>capture transaction id</td>
       </tr>
       <tr>
+         <td>responseCode</td>
+         <td>string</td>
+         <td>response code generated</td>
+      </tr>
+      <tr>
+         <td>networkTransactionReference</td>
+         <td>string</td>
+         <td>network transaction reference generated</td>
+      </tr>
+      <tr>
          <td>authCode</td>
          <td>string</td>
          <td>auth code</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>order reference for the original transaction</td>
+      </tr>
+      <tr>
+         <td>remainingBalance</td>
+         <td>float64</td>
+         <td>balance after capture was applied for the original transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>bool</td>
+         <td>flag to indicate status of the capture transaction</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>capture transaction completion message</td>
       </tr>
    </tbody>
 </table>
