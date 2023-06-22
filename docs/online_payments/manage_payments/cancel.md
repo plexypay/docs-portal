@@ -58,7 +58,14 @@ No request body is required as this endpoint does not expect any parameters.
 ```json
 {
     "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
-    "authCode": "856156"
+    "responseCode": "00",
+    "networkTransactionReference": "0000021266523063630A",
+    "authCode": "856156",
+    "amount": 15.55,
+    "orderReference": "1667207373325",
+    "remainingBalance": 15.55,
+    "success": true,
+    "message": "Successfully cancelled the transaction",
 }
 ```
 
@@ -94,9 +101,44 @@ No request body is required as this endpoint does not expect any parameters.
          <td>cancelled transaction id</td>
       </tr>
       <tr>
+         <td>responseCode</td>
+         <td>string</td>
+         <td>response code generated</td>
+      </tr>
+      <tr>
+         <td>networkTransactionReference</td>
+         <td>string</td>
+         <td>network transaction reference generated</td>
+      </tr>
+      <tr>
          <td>authCode</td>
          <td>string</td>
          <td>auth code</td>
+      </tr>
+      <tr>
+         <td>amount</td>
+         <td>float64</td>
+         <td>amount cancelled</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>order reference for the cancelled transaction</td>
+      </tr>
+      <tr>
+         <td>remainingBalance</td>
+         <td>float64</td>
+         <td>balance after cancel was applied for the original transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>bool</td>
+         <td>flag to indicate status of the cancel transaction</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>cancel transaction completion message</td>
       </tr>
    </tbody>
 </table>

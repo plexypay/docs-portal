@@ -55,7 +55,9 @@ Only transactions with the status "charged" can be refunded.
 
 ```json
 {
-    "amount": 56.41
+    "amount": 56.41,
+    "orderReference": "1667207373325",
+    "description": "refund transaction"
 }
 ```
 </TabItem>
@@ -64,7 +66,9 @@ Only transactions with the status "charged" can be refunded.
 
 ```json
 {
-    "amount": null
+    "amount": null,
+    "orderReference": "1667207373325",
+    "description": "refund transaction"
 }
 ```
 </TabItem>
@@ -103,6 +107,20 @@ Only transactions with the status "charged" can be refunded.
       <td>refund amount</td>
       <td>format: 00.00, must be a positive number; if the value is set to null, a full refund will be processed</td>
     </tr>
+    <tr>
+      <td>orderReference</td>
+      <td>string | nullable</td>
+      <td>Optional (value of null) if new order reference is to be stored</td>
+      <td>order reference</td>
+      <td>any text type reference id; if this field is skipped, original transaction order reference value will be assigned</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string | nullable</td>
+      <td>Optional (value of null) if new description is to be stored</td>
+      <td>refund transaction description</td>
+      <td>any text to describe the newly requisted retund transaction; if this field is skipped, original transaction description will be assigned</td>
+    </tr>
   </tbody>
 </table>
 </DocsTable>
@@ -128,7 +146,13 @@ Only transactions with the status "charged" can be refunded.
     "id": "56b5f4ac-c95e-4b89-bd2d-3cf7369857ef",
     "responseCode": "00",
     "networkTransactionReference": "0000021266523063630A",
-    "authCode": "856156"
+    "authCode": "856156",
+    "amount": 15.55,
+    "orderReference": "1667207373325",
+    "remainingBalance": 40.86,
+    "success": true,
+    "message": "Successfully refunded the transaction",
+    "originalTransactionId": "c3bcfd40-285b-496a-82c3-ce1c2271aae2"
 }
 ```
 
@@ -177,6 +201,36 @@ Only transactions with the status "charged" can be refunded.
          <td>authCode</td>
          <td>string</td>
          <td>auth code</td>
+      </tr>
+      <tr>
+         <td>amount</td>
+         <td>float64</td>
+         <td>amount refunded</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>order reference for the newly created refund transaction</td>
+      </tr>
+      <tr>
+         <td>remainingBalance</td>
+         <td>float64</td>
+         <td>balance after refund was applied for the original transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>bool</td>
+         <td>flag to indicate status of the refund transaction</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>refund transaction completion message</td>
+      </tr>
+      <tr>
+         <td>originalTransactionId</td>
+         <td>string</td>
+         <td>parent transaction id</td>
       </tr>
    </tbody>
 </table>
