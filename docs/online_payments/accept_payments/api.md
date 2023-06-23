@@ -817,6 +817,11 @@ LQIDAQAB
       <td></td>
     </tr>
     <tr>
+      <td>status</td>
+      <td>3ds-completed</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cardScheme</td>
       <td>visa</td>
       <td></td>
