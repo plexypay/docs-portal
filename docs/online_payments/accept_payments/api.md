@@ -618,7 +618,7 @@ LQIDAQAB
       <tr>
          <td>captured</td>
          <td>boolean</td>
-         <td>flag to indicate if the funds were blocked</td>
+         <td>This field provides information on the settlement status of the transaction, indicating whether it has been submitted for settlement or is currently awaiting further actions such as "capture" or "cancel"</td>
       </tr>
       <tr>
          <td>message</td>
@@ -1123,7 +1123,7 @@ ForoPay using the provided endpoint described below.
       <tr>
          <td>captured</td>
          <td>boolean</td>
-         <td>flag to indicate if the funds were blocked</td>
+         <td>This field provides information on the settlement status of the transaction, indicating whether it has been submitted for settlement or is currently awaiting further actions such as "capture" or "cancel"</td>
       </tr>
       <tr>
          <td>message</td>
