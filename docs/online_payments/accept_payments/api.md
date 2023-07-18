@@ -530,32 +530,28 @@ LQIDAQAB
 
 ```json
 {
-  "id": "05e99c36-499d-4a6f-9e5d-e93d3eb8e63e",
-  "orderReference": "1667207373325",
-  "amount": 126.27,
-  "currency": "EUR",
-  "paymentMethod": "card",
-  "success": true,
-  "captured": true,
-  "message": "Success",
-  "threeDS": {
-        "html": "<!doctype html><html lang='en'><head><title>ACS Authentication Page</  title><script src='https://www.threedsecurempi.com/EMVTDS/jsp/CardHolder/PostForm.js'></script><meta charset='utf-8'></head><body><form name='payer' id='payer' action='https&#x3A;&#x2F;&#x2F;www.threedsecurempi.com&#x2F;EMVTDS&#x2F;AUT&#x3F;Action&#x3D;ProcessCReq' method='POST' style='display: none'><input type=\"hidden\" name=\"threeDSSessionData\" value=\"eyJ0cmFuc2FjdGlvbklkIjoiYzNiY2ZkNDAtMjg1Yi00OTZhLTgyYzMtY2UxYzIyNzFhYWUyIn0\"/><input type='hidden' name='creq' value='eyJhY3NUcmFuc0lEIjoiN2RjZTJjZTctYmQ4OC00YzZmLWEyNzgtOWU5MzFlYzU2OThiIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJjMDllY2Q5MC02MGI2LTRjMDktODc1Mi0yNmMxOWE4NGU2ZjMiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0'/><script type='application/javascript' >document.forms[0].submit()</script></form></body></html>",
+    "id": "d9ed7581-048d-434c-9a63-7bbd361c0dec",
+    "orderReference": "1667207373325",
+    "amount": 221,
+    "currency": "EUR",
+    "paymentMethod": "card",
+    "success": true,
+    "captured": true,
+    "message": "Authentication required",
+    "threeDS": {
+        "html": "<!doctype html><html lang='en'><head><title>ACS Authentication Page</title><script src='https://www.threedsecurempi.com/EMVTDS/jsp/CardHolder/PostForm.js'></script><meta charset='utf-8'></head><body><form name='payer' id='payer' action='https&#x3A;&#x2F;&#x2F;www.threedsecurempi.com&#x2F;EMVTDS&#x2F;AUT&#x3F;Action&#x3D;ProcessCReq' method='POST' style='display: none'><input type=\"hidden\" name=\"threeDSSessionData\" value=\"eyJ0cmFuc2FjdGlvbklkIjoiZDllZDc1ODEtMDQ4ZC00MzRjLTlhNjMtN2JiZDM2MWMwZGVjIn0\"/><input type='hidden' name='creq' value='eyJhY3NUcmFuc0lEIjoiZTViNTZiM2EtZWYyNS00ODhlLWJhZWYtODQxYTJjZjc2MjA3IiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJhNjNhNDQ4Mi05NTljLTRmN2MtYmY1ZS1mNDBmMmVkN2RlZTciLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0'/><script type='application/javascript' >document.forms[0].submit()</script></form></body></html>",
+        "status": "C",
         "type": "challengeflow",
-        "creq": "eyJhY3NUcmFuc0lEIjoiN2RjZTJjZTctYmQ4OC00YzZmLWEyNzgtOWU5MzFlYzU2OThiIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJjMDllY2Q5MC02MGI2LTRjMDktODc1Mi0yNmMxOWE4NGU2ZjMiLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0",
-        "threeDSSessionData": "eyJ0cmFuc2FjdGlvbklkIjoiYzNiY2ZkNDAtMjg1Yi00OTZhLTgyYzMtY2UxYzIyNzFhYWUyIn0",
+        "creq": "eyJhY3NUcmFuc0lEIjoiZTViNTZiM2EtZWYyNS00ODhlLWJhZWYtODQxYTJjZjc2MjA3IiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJhNjNhNDQ4Mi05NTljLTRmN2MtYmY1ZS1mNDBmMmVkN2RlZTciLCJjaGFsbGVuZ2VXaW5kb3dTaXplIjoiMDQiLCJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIn0",
+        "threeDSSessionData": "eyJ0cmFuc2FjdGlvbklkIjoiZDllZDc1ODEtMDQ4ZC00MzRjLTlhNjMtN2JiZDM2MWMwZGVjIn0",
         "action": "https://www.threedsecurempi.com/EMVTDS/AUT?Action=ProcessCReq"
-  },
-  "status": "3ds-skipped",
-  "cardTokenId": "7bafca06-9031-44bf-9289-c66e35ddbd91",
-  "cardMask": "******0000",
-  "cardExpiryDate": "11/27",
-  "cardholderName": "John Doe",
-  "cardScheme": "visa",
-  "cvvStatus": "P",
-  "cvvStatusDecoded": "not processed",
-  "networkTransactionReference": "0000021266523063630A",
-  "responseCode": "00",
-  "authCode": "374952"
+    },
+    "action": "3ds-required",
+    "cardTokenId": "ba6d17c0-c020-4ea9-9351-105ac3039c2c",
+    "cardMask": "******1111",
+    "cardExpiryDate": "07/27",
+    "cardholderName": "John Doe",
+    "cardScheme": "visa"
 }
 ```
 
@@ -631,6 +627,11 @@ LQIDAQAB
          <td>html generated pop-up window for entering 3ds password</td>
       </tr>
       <tr>
+         <td>threeDS.status</td>
+         <td>string</td>
+         <td>transaction status code as per EMV specification</td>
+      </tr>
+      <tr>
          <td>threeDS.type</td>
          <td>string</td>
          <td>3DS-2 type</td>
@@ -651,9 +652,9 @@ LQIDAQAB
          <td>ACS server action URL</td>
       </tr>
       <tr>
-         <td>status</td>
+         <td>action</td>
          <td>string</td>
-         <td>indicates if 3ds-2 is required at this current step</td>
+         <td>indicates if 3ds-2 is required at this current step (only if 3ds-required)</td>
       </tr>
       <tr>
          <td>cardTokenId</td>
@@ -718,9 +719,207 @@ LQIDAQAB
 
 :::
 
+#### Transaction status code decoding:
+<table>
+  <thead>
+    <tr>
+      <th><strong>Transaction status code</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Y</td>
+      <td>Authentication / Account verification successful</td>
+    </tr>
+    <tr>
+      <td>N</td>
+      <td>Not authenticated / account not verified; transaction denied</td>
+    </tr>
+    <tr>
+      <td>U</td>
+      <td>Authentication / Account verification could not be performed; technical or other problem, as indicated in ARes or RReq</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>Attempts processing performed; not authenticated / verified, but a proof of attempted authentication / verification is provided</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>Challenge required; additional authentication is required using the CReq/CRes</td>
+    </tr>
+    <tr>
+      <td>R</td>
+      <td>Authentication / account verification rejected; issuer is rejecting authentication / verification and request request that authorization not be attempted</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Unsuccessful transaction Response:
+
+<Tabs
+  groupId="response"
+  defaultValue="example"
+  values={[
+  {label: 'Response example', value: 'example'},
+  {label: 'Response parameters', value: 'parameters'},
+]}>
+<TabItem value="example">
+
+```json
+{
+    "id": "ada644ec-3db3-4dbd-9112-fae31ca76815",
+    "orderReference": "1667207373325",
+    "amount": 221,
+    "currency": "EUR",
+    "paymentMethod": "card",
+    "success": false,
+    "code": 1013,
+    "message": "Authentication rejected (suspected fraud)",
+    "threeDS": {
+        "status": "R",
+        "electronicCommerceIndicator": "07",
+        "acsTranscationId": "1524fb0e-7f13-4f81-9cab-6a58766bb521",
+        "mpiTransactionId": "1d4446f5-a7c8-4e05-8231-59ab09a45f37",
+        "directoryTransactionId": "f1398ac1-42fd-4a80-8f07-a26191e293f8",
+        "statusReason": "11"
+    },
+    "cardTokenId": "ba6d17c0-c020-4ea9-9351-105ac3039c2c",
+    "cardMask": "******1111",
+    "cardExpiryDate": "07/27",
+    "cardholderName": "John Doe",
+    "cardScheme": "visa"
+}
+```
+</TabItem>
+
+<TabItem value="parameters">
+
+<DocsTable columns={[
+  {
+    wrappers: [{
+      tag: 'code',
+      attrs: {style:"max-width: 290px"}
+    }]
+  },
+  {
+    wrappers: [
+      {tag: 'b', attrs: {style:"color: var(--ifm-menu-color-active)"}}
+    ]
+  }
+]}>
+<table>
+   <thead>
+      <tr>
+         <th><strong>Parameter name</strong></th>
+         <th><strong>Type</strong></th>
+         <th><strong>Description</strong></th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>id</td>
+         <td>string</td>
+         <td>newly created transaction id</td>
+      </tr>
+      <tr>
+         <td>orderReference</td>
+         <td>string</td>
+         <td>merchant internal order reference</td>
+      </tr>
+      <tr>
+         <td>amount</td>
+         <td>float64</td>
+         <td>amount of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>currency</td>
+         <td>string</td>
+         <td>currency of a newly created transaction</td>
+      </tr>
+      <tr>
+         <td>paymentMethod</td>
+         <td>string</td>
+         <td>payment method used to create the transaction</td>
+      </tr>
+      <tr>
+         <td>success</td>
+         <td>boolean</td>
+         <td>flag to indicate the status for the request</td>
+      </tr>
+      <tr>
+         <td>captured</td>
+         <td>boolean</td>
+         <td>This field provides information on the settlement status of the transaction, indicating whether it has been submitted for settlement or is currently awaiting further actions such as "capture" or "cancel"</td>
+      </tr>
+      <tr>
+         <td>message</td>
+         <td>string</td>
+         <td>request response message</td>
+      </tr>
+      <tr>
+         <td>threeDS.status</td>
+         <td>string</td>
+         <td>3DS-2 process status</td>
+      </tr>
+      <tr>
+         <td>threeDS.electronicCommerceIndicator</td>
+         <td>string</td>
+         <td>generated electronic commerce indicator</td>
+      </tr>
+      <tr>
+         <td>threeDS.acsTranscationId</td>
+         <td>string</td>
+         <td>acs transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.mpiTransactionId</td>
+         <td>string</td>
+         <td>mpi transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.directoryTransactionId</td>
+         <td>string</td>
+         <td>directory transaction id</td>
+      </tr>
+      <tr>
+         <td>threeDS.statusReason</td>
+         <td>string</td>
+         <td>encoded status reason (see Response Codes tab for details)</td>
+      </tr>
+      <tr>
+         <td>cardTokenId</td>
+         <td>string</td>
+         <td>card token id of the stored card credentials</td>
+      </tr>
+      <tr>
+         <td>cardMask</td>
+         <td>string</td>
+         <td>masked card number</td>
+      </tr>
+      <tr>
+         <td>cardExpiryDate</td>
+         <td>string</td>
+         <td>card expiration date</td>
+      </tr>
+      <tr>
+         <td>cardholderName</td>
+         <td>string</td>
+         <td>card owner first last name</td>
+      </tr>
+      <tr>
+         <td>cardScheme</td>
+         <td>string</td>
+         <td>card type</td>
+      </tr>
+   </tbody>
+</table>
+</DocsTable>
+
+</TabItem>
+</Tabs>
+
 #### CVV code letter decoding:
-
-
 <table>
   <thead>
     <tr>
@@ -758,8 +957,6 @@ LQIDAQAB
 
 
 #### CVV code number decoding:
-
-
 <table>
   <thead>
     <tr>
@@ -807,18 +1004,8 @@ LQIDAQAB
   </thead>
   <tbody>
     <tr>
-      <td>status</td>
-      <td>3ds-skipped</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>status</td>
+      <td>action</td>
       <td>3ds-required</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>status</td>
-      <td>3ds-completed</td>
       <td></td>
     </tr>
     <tr>
@@ -927,17 +1114,12 @@ accurately provide or those that are mandatory in specific scenarios.
 :::
 
 - **Handling the response “success” and “status” fields**: Upon receiving
-a response, check the "status" field to determine the next steps:
-  - **"3ds-skipped"**: If you receive this response, it means the transaction
-was exempted or out-of-scope for 3D Secure 2.
-  - **"3ds-required"**: This status indicates that the issuer requires 
+a response, check the "action" field to determine the next steps:
+  - **"3ds-required"**: This action indicates that the issuer requires 
 interaction with the cardholder. Proceed to the Challenge Flow.
-  - **"3ds-completed"**: If the status is "3ds-completed," it means that the 
-3D Secure 2 authentication was Frictionless, and the payment 
-authorization was attempted.
 
 #### Handling the Challenge Flow
-In case the response status is "3ds-required", the issuer requires further 
+In case the response action is "3ds-required", the issuer requires further 
 cardholder interaction. To handle the challenge flow please follow the next
 steps:
 - Create an iframe using either the "threeDS.html" field, which 
@@ -1043,24 +1225,24 @@ ForoPay using the provided endpoint described below.
     "paymentMethod": "card",
     "success": true,
     "captured": true,
-    "message": "Success",
+    "message": "Approved and completed successfully",
     "threeDS": {
-        "status": "successful",
+        "status": "Y",
         "electronicCommerceIndicator": "05",
-        "acsTranscationId": "6af10b4a-07a9-4af5-a693-d22dc3b6ca49",
-        "mpiTransactionId": "e8739b30-24cb-46b8-a192-8ce89c857546",
-        "directoryTransactionId": "1ffb9e12-a16e-4943-85fb-6a71b39418b2"
+        "acsTranscationId": "a6b129ce-ec42-46e0-8de1-404fb791166f",
+        "mpiTransactionId": "d5e94c67-5cf6-41d7-b2ec-3cc011850f70",
+        "directoryTransactionId": "7602cec4-9c63-48fa-ae17-d0ff18d28d78"
     },
-    "cardTokenId": "f2eda7e8-83c4-441b-b7ec-18b1cbb6b56d",
-    "cardMask": "******1111",
-    "cardExpiryDate": "11/27",
-    "cardholderName": "JOHN M",
+    "cardTokenId": "f9a9d1ea-f1ad-4816-84ef-5af9b672a0b0",
+    "cardMask": "******0000",
+    "cardExpiryDate": "07/27",
+    "cardholderName": "John Doe ",
     "cardScheme": "visa",
     "cvvStatus": "P",
-    "cvvStatusDecoded": "not processed",
-    "networkTransactionReference": "0000021266523063630A",
+    "cvvStatusDecoded": "not provided",
+    "networkTransactionReference": "0000018560713233367A",
     "responseCode": "00",
-    "authCode": "747208"
+    "authCode": "706188"
 }
 ```
 
@@ -1133,7 +1315,7 @@ ForoPay using the provided endpoint described below.
       <tr>
          <td>threeDS.status</td>
          <td>string</td>
-         <td>3DS-2 process status</td>
+         <td>3DS-2 process letter-encoded status</td>
       </tr>
       <tr>
          <td>threeDS.electronicCommerceIndicator</td>

@@ -8,7 +8,7 @@ import ExpandableTable from '/src/components/global/ExpandableTable';
 
 # Response Codes
 
-This page provides response codes returned by our API
+This page provides response codes and status reason codes returned by our API
 
 <table class="margin-top--xs">
   <thead>
@@ -216,3 +216,122 @@ This page provides response codes returned by our API
     </tr>
   </tbody>
 </table>
+
+
+
+<table class="margin-top--xs">
+  <thead>
+    <tr>
+      <th style={{minWidth: '150px'}}><strong>Status reason Code</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+  <td>01</td>
+  <td>Card authentication failed</td>
+</tr>
+<tr>
+  <td>02</td>
+  <td>Unknown device</td>
+</tr>
+<tr>
+  <td>03</td>
+  <td>Unsupported device</td>
+</tr>
+<tr>
+  <td>04</td>
+  <td>Exceeds authentication frequency limit</td>
+</tr>
+<tr>
+  <td>05</td>
+  <td>Expired card</td>
+</tr>
+<tr>
+  <td>06</td>
+  <td>Invalid card number</td>
+</tr>
+<tr>
+  <td>07</td>
+  <td>Invalid transaction</td>
+</tr>
+<tr>
+  <td>08</td>
+  <td>No card record</td>
+</tr>
+<tr>
+  <td>09</td>
+  <td>Security failure</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>Stolen card</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>Suspected fraud</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td>Transaction not permitted to cardholder</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td>Cardholder not enrolled in service</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td>Transaction timed out at the acs</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td>Low confidence</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td>Medium confidence</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td>High confidence</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td>Very high confidence</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td>Exceeds acs maximum challenges</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td>Nonpayment transaction not supported</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td>3RI transaction not supported</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>Acs technical issue</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td>Decoupled authentication required by acs but not requested by 3ds requestor</td>
+</tr>
+<tr>
+  <td>24</td>
+  <td>3DS requestor decoupled max expiry time exceeded</td>
+</tr>
+<tr>
+  <td>25</td>
+  <td>Decoupled authentication was provided insufficient time to authenticate cardholder</td>
+</tr>
+<tr>
+  <td>26</td>
+  <td>Authentication attempted but not performed by the cardholder</td>
+</tr>
+  </tbody>
+</table>
+
+
