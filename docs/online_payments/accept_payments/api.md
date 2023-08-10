@@ -211,7 +211,7 @@ This section provides information on how to initiate a payment transaction. The 
       <td>browserDetails.timeZone</td>
       <td>string</td>
       <td className="text-center"><icon icon="fa-check" color="green" /></td>
-      <td></td>
+      <td>Timezone in minutes (also accepts negative values)</td>
       <td>-360</td>
     </tr>
     <tr>
