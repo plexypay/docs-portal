@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Building Your Payment Integration with ForoPay
+title: Building Your Payment Integration with PlexyPay
 sidebar_label: Home
 hide_table_of_contents: true
 pagination_next: null
@@ -10,11 +10,11 @@ pagination_next: null
 import DocsCard from '/src/components/global/DocsCard';
 import DocsCards from '/src/components/global/DocsCards';
 
-Integrating your payment solution with ForoPay is easy and flexible, with several options to suit your needs. Whether you prefer to use our hosted checkout page or build your own UI and process transactions using our APIs, we've got you covered.
+Integrating your payment solution with PlexyPay is easy and flexible, with several options to suit your needs. Whether you prefer to use our hosted checkout page or build your own UI and process transactions using our APIs, we've got you covered.
 
 <DocsCards>
   <DocsCard header="Hosted page" chips="soon" className="Card--opacity-6" >
-    <p>Use ForoPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
+    <p>Use PlexyPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
   </DocsCard>
   <DocsCard header="Popup" chips="soon" className="Card--opacity-6" >
     <p>Allow visitors to securely shop on your webshop without leaving your site.</p>

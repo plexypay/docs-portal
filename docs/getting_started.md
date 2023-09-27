@@ -12,11 +12,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import DocsTable from '/src/components/global/DocsTable';
 
-This guide will walk you through the process of setting up your ForoPay account, making your first payment request, and utilising our ready-made solutions to accept payments.
+This guide will walk you through the process of setting up your PlexyPay account, making your first payment request, and utilising our ready-made solutions to accept payments.
 
 ## Step 1: Create a test account
 
-To get started with ForoPay, create a free test account. This account grants you access to the test Customer Area, a unified dashboard where you can manage your ForoPay integration across different regions and currencies.
+To get started with PlexyPay, create a free test account. This account grants you access to the test Customer Area, a unified dashboard where you can manage your PlexyPay integration across different regions and currencies.
 
 With your test Customer Area account, you can:
 
@@ -39,7 +39,7 @@ Choose the integration option that best suits your business needs:
 
 <DocsCards>
   <DocsCard header="Hosted page" chips="soon" className="Card--opacity-6" >
-    <p>Use ForoPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
+    <p>Use PlexyPay's secure and reliable integrated checkout page to handle payments for your customers.</p>
   </DocsCard>
 
   <DocsCard header="Popup" chips="soon" className="Card--opacity-6" >

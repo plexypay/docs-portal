@@ -6,8 +6,8 @@ const lightCodeTheme = require("prism-react-renderer/themes/github");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Foropay docs",
-  url: "https://foropay.github.io",
+  title: "Plexypay docs",
+  url: "https://plexypay.github.io",
   baseUrl: "/docs-portal/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -15,7 +15,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "foropay", // Usually your GitHub org/user name.
+  organizationName: "plexypay", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -35,7 +35,7 @@ const config = {
           routeBasePath: "/",
           sidebarCollapsed: false,
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/foropay/docs-portal/blob/main/",
+          editUrl: "https://github.com/plexypay/docs-portal/blob/main/",
         },
         blog: false,
         theme: {
@@ -74,9 +74,9 @@ const config = {
         disableSwitch: true,
       },
       navbar: {
-        // title: "Foropay docs",
+        // title: "Plexypay docs",
         logo: {
-          alt: "Foropay Logo",
+          alt: "Plexypay Logo",
           src: "img/logo.svg",
         },
         items: [
@@ -96,7 +96,7 @@ const config = {
       footer: {
         style: "dark",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} ForoPay.`,
+        copyright: `Copyright © ${new Date().getFullYear()} PlexyPay.`,
       },
       prism: {
         theme: lightCodeTheme,
