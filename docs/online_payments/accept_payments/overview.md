@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_custom_props:
-  description: ForoPay offers several solutions for accepting payments.
+  description: PlexyPay offers several solutions for accepting payments.
 ---
 
 import DocsCard from '/src/components/global/DocsCard';
@@ -9,11 +9,11 @@ import DocsCards from '/src/components/global/DocsCards';
 
 # Overview
 
-ForoPay offers several solutions for accepting payments.
+PlexyPay offers several solutions for accepting payments.
 
 <DocsCards>
   <DocsCard header="Hosted page" chips="soon" className="Card--opacity-6" >
-    <p>ForoPay hosted checkout page where you send your customers to finalize their payments.</p>
+    <p>PlexyPay hosted checkout page where you send your customers to finalize their payments.</p>
   </DocsCard>
 
   <DocsCard header="Popup" chips="soon" className="Card--opacity-6" >
@@ -30,6 +30,6 @@ ForoPay offers several solutions for accepting payments.
   </DocsCard>
 
   <DocsCard header="API only"  href="/docs-portal/online_payments/accept_payments/api">
-    <p>Build your own payment form and process transactions using ForoPay’s APIs.</p>
+    <p>Build your own payment form and process transactions using PlexyPay’s APIs.</p>
   </DocsCard>
 </DocsCards>

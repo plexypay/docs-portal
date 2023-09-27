@@ -80,7 +80,7 @@ This section provides information on how to initiate a payment transaction. The 
       "items": []
   },
   "customerDetails": {
-      "email": "johndoe@foropay.com",
+      "email": "johndoe@foropay.eu",
       "deliveryAddress": {
           "firstName": "John",
           "lastName": "Doe",
@@ -1129,8 +1129,8 @@ contains ready-to-use HTML code, or build your own code using the
 complete the authentication process.
 - Get the challenge result (CRes) at your specified 
 "threeDSNotificationUrl" from the issuer (ACS).
-- Submit the challenge result (CRes) and ForoPay Transaction ID to 
-ForoPay using the provided endpoint described below.
+- Submit the challenge result (CRes) and PlexyPay Transaction ID to 
+PlexyPay using the provided endpoint described below.
 
 
 #### Endpoints
@@ -1459,7 +1459,7 @@ ForoPay using the provided endpoint described below.
 
 ## Tokenisation
 
-ForoPay provides a secure solution for storing payment details, empowering you to offer enhanced payment options to your shoppers. Through our tokenisation feature, you can securely save one or more payment details per shopper, facilitating subscription payments, automatic top-ups, and a quicker checkout process using their stored cards.
+PlexyPay provides a secure solution for storing payment details, empowering you to offer enhanced payment options to your shoppers. Through our tokenisation feature, you can securely save one or more payment details per shopper, facilitating subscription payments, automatic top-ups, and a quicker checkout process using their stored cards.
 
 Tokenisation involves storing shoppers' payment details as tokens within our system. These tokens represent the saved payment information, ensuring the security of sensitive data.
 
