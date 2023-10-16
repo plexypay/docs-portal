@@ -27,7 +27,7 @@ With your test Customer Area account, you can:
 
 ## Step 2: Get your private API key
 
-To acquire the private API key, please email us on support@foropay.eu. You can later use the received key to send requests to our API.
+To acquire the private API key, please email us on support@plexypay.com. You can later use the received key to send requests to our API.
 
 
 
