@@ -89,7 +89,7 @@ const config = {
           {
             label: "Dashboard",
             position: "right",
-            href: "https://dashboard.plexypay.eu/",
+            href: "https://dashboard.plexypay.com/",
           },
         ],
       },
