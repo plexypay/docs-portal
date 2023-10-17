@@ -80,7 +80,7 @@ This section provides information on how to initiate a payment transaction. The 
       "items": []
   },
   "customerDetails": {
-      "email": "johndoe@foropay.eu",
+      "email": "johndoe@plexypay.com",
       "deliveryAddress": {
           "firstName": "John",
           "lastName": "Doe",
@@ -102,7 +102,7 @@ This section provides information on how to initiate a payment transaction. The 
           "country": "DE"
       }
   },
-  "threeDSNotificationUrl": "https://test-api.foropay.eu/v1/3ds/callback",
+  "threeDSNotificationUrl": "https://test-api.plexypay.com/v1/3ds/callback",
   "paymentMethod": "card",
   "cardData": {
      "encryptedCardNumber": "hJjwmfFp3c/50xIKyPtsK9NI/Z8DFfxQyeDMpI4PohR8Bzpl7eEQgqjfcC1JIvRep98Hu9b4G9VvgpFNf3PmlVQygidNGqOyKOCESiQnh57ofOYKiEuYIr/LwY3TRcfvC+WE9AmvW9l/2VcLVm5SPZ6MoEKU0njpti6VWnKqrNzp5fmHwkWKKmuc1V+YjLgWAiAbYgnPNG6wG4BuaQk6p/IFIVH+Ur40z1XF0/zezybsXSJfLF2F0PKri2cO6V89cTQYb4Usiu9W+pckVyeeMYOKPykU05NPyhd3VmDrAf8gvdUq2K4CON2l+99u6XoQ9tDlBgysoll7vy0BjSMkGw==",
@@ -373,7 +373,7 @@ This section provides information on how to initiate a payment transaction. The 
       <td>string</td>
       <td className="text-center"><icon icon="fa-check" color="green" /></td>
       <td>3DS-2 redirect URL to be triggered by the ASC server</td>
-      <td>https://test-api.foropay.eu/v1/3ds/callback</td>
+      <td>https://test-api.plexypay.com/v1/3ds/callback</td>
     </tr>
     <tr>
       <td>paymentMethod</td>
